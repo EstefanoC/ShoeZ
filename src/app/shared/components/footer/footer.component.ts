@@ -10,7 +10,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-footer',
   standalone: true,
   imports: [
     CommonModule,
@@ -21,10 +21,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCheckboxModule,
     MatGridListModule,
   ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.sass',
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.sass',
 })
-export class HeaderComponent {
+export class FooterComponent {
   getTheme() {
     if (typeof document !== 'undefined') {
       return document.body.classList.contains('dark-theme');

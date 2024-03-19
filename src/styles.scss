@@ -1,18 +1,15 @@
 @use "@angular/material" as mat;
 
 // Initial Styles
-:root {
-  color-scheme: light dark;
+*:not(mat-icon) {
+  font-family: "Rubik", sans-serif !important;
 }
 
 html,
 body {
   overflow-x: hidden;
   height: 100%;
-}
-body {
   margin: 0;
-  font-family: "Rubik", sans-serif;
 }
 
 // Presets to use in all APP
@@ -20,29 +17,27 @@ body {
   width: 100%;
   margin: 0 auto;
   max-width: 1320px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .container {
     max-width: 1140px;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .container {
     max-width: 960px;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .container {
     max-width: 720px;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .container {
     max-width: 540px;
   }
@@ -81,7 +76,6 @@ $light-theme: mat.define-light-theme(
       primary: $primary,
       accent: $accent,
     ),
-    typography: mat.define-typography-config(),
   )
 );
 
@@ -95,7 +89,6 @@ $dark-theme: mat.define-dark-theme(
       primary: $dark-primary,
       accent: $dark-accent,
     ),
-    typography: mat.define-typography-config(),
   )
 );
 
@@ -104,3 +97,8 @@ $dark-theme: mat.define-dark-theme(
 body.dark-theme {
   @include mat.all-component-colors($dark-theme);
 }
+
+// :root {
+//   --color-primary: #{mat-color($mat-primary-scheme, 100)};
+//   --color-accent: #{mat-color($mat-primary-scheme, 500)};
+// }

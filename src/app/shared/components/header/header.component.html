@@ -1,0 +1,37 @@
+<header color="primary" class="container">
+  <mat-grid-list cols="3" rowHeight="115px">
+    <!-- Logo -->
+    <mat-grid-tile>
+      <a class="logo" [routerLink]="['/']">
+        <img
+          [attr.src]="
+            getTheme()
+              ? '../../assets/image/LogoDark.png'
+              : '../../assets/image/LogoLight.png'
+          "
+          alt="ShoeZ Logo"
+        />
+      </a>
+    </mat-grid-tile>
+
+    <!-- Info -->
+    <mat-grid-tile>
+      <div class="info_container" color="primary">
+        <mat-icon aria-hidden="false" color="accent" aria-label="Phone">
+          phone_in_talk
+        </mat-icon>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-icon>accessibility</mat-icon>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-button color="primary">Primary test</button>
+      <button mat-button color="accent">Accent</button>
+      <!-- add two buttons to switch theme from light to dark -->
+      <div class="example-button-row">
+        <button (click)="toggleTheme()">Toggle Theme</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</header>
