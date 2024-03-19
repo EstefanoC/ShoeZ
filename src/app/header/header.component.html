@@ -1,3 +1,29 @@
-<header color="primary">Recently Viewed t</header>
-<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-<mat-icon>accessibility</mat-icon>
+<header color="primary" class="container">
+  <mat-grid-list cols="3">
+    <mat-grid-tile>
+      <img
+        [attr.src]="
+          getTheme()
+            ? '../../assets/image/LogoDark.png'
+            : '../../assets/image/LogoLight.png'
+        "
+      />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">
+        home
+      </mat-icon>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-icon>accessibility</mat-icon>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-button color="primary">Primary</button>
+      <button mat-button color="accent">Accent</button>
+      <!-- add two buttons to switch theme from light to dark -->
+      <div class="example-button-row">
+        <button (click)="toggleTheme()">Toggle Theme</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</header>
