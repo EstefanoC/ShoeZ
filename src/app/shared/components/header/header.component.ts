@@ -13,9 +13,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   selector: 'app-header',
   standalone: true,
   imports: [
-    RouterModule,
     CommonModule,
     RouterOutlet,
+    RouterModule,
     MatIconModule,
     MatButtonModule,
     MatDividerModule,

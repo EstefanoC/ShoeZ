@@ -1,0 +1,138 @@
+@use "@angular/material" as mat;
+
+$mat-primary-scheme: (
+  100: #54c7d1,
+  500: #5f999e,
+  700: #56696b,
+  800: #eefdff,
+  contrast: (
+    100: #1e1e1e,
+    500: #2d3738,
+    700: #1e1e1ecb,
+  ),
+);
+
+$mat-dark-scheme: (
+  100: #0e2021,
+  500: #335354,
+  700: #6d8687,
+  800: #25292a,
+  contrast: (
+    100: #b4e6e9,
+    500: #93b8ba,
+    700: #21393c,
+  ),
+);
+
+$primary: mat.define-palette($mat-primary-scheme, 100);
+$accent: mat.define-palette($mat-primary-scheme, 500);
+$warn: mat.define-palette($mat-primary-scheme, 700);
+$tertiary: mat.define-palette($mat-primary-scheme, 800);
+
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+      tertiary: $tertiary,
+    ),
+  )
+);
+
+// define the dark theme palettes
+$dark-primary: mat.define-palette($mat-dark-scheme, 100);
+$dark-accent: mat.define-palette($mat-dark-scheme, 500);
+$dark-warn: mat.define-palette($mat-dark-scheme, 700);
+$dark-tertiary: mat.define-palette($mat-dark-scheme, 800);
+
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+      tertiary: $dark-tertiary,
+    ),
+  )
+);
+
+// Var to use in light theme
+.bg_primary {
+  background-color: mat.get-color-from-palette($primary);
+}
+.bg_secondary {
+  background-color: mat.get-color-from-palette($accent);
+}
+.bg_warn {
+  background-color: mat.get-color-from-palette($warn);
+}
+.bg_tertiary {
+  background-color: mat.get-color-from-palette($tertiary);
+}
+
+@include mat.all-component-themes($light-theme);
+
+// Var to use in dark theme
+body.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+
+  .bg_primary {
+    background-color: mat.get-color-from-palette($dark-primary);
+  }
+
+  .bg_secondary {
+    background-color: mat.get-color-from-palette($dark-accent);
+  }
+
+  .bg_warn {
+    background-color: mat.get-color-from-palette($dark-warn);
+  }
+
+  .bg_tertiary {
+    background-color: mat.get-color-from-palette($dark-tertiary);
+  }
+}
+
+// Initial Styles
+*:not(mat-icon) {
+  font-family: "Rubik", sans-serif !important;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+}
+
+// Presets to use in all APP
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1320px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}

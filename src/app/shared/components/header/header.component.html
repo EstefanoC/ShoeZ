@@ -1,4 +1,4 @@
-<header color="primary" class="container">
+<header theme="primary" class="container">
   <mat-grid-list cols="3" rowHeight="115px">
     <!-- Logo -->
     <mat-grid-tile>
@@ -16,10 +16,18 @@
 
     <!-- Info -->
     <mat-grid-tile>
-      <div class="info_container" color="primary">
-        <mat-icon aria-hidden="false" color="accent" aria-label="Phone">
-          phone_in_talk
-        </mat-icon>
+      <div class="info_container mat-typography">
+        <div class="bg_tertiary">
+          <mat-icon aria-hidden="false" color="accent" aria-label="Phone">
+            phone_in_talk
+          </mat-icon>
+        </div>
+        <p>
+          Call Us:
+          <a href="tel:0123-456-7890" class="header-call__number"
+            >0123-456-7890</a
+          >
+        </p>
       </div>
     </mat-grid-tile>
     <mat-grid-tile>
