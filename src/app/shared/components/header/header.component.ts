@@ -9,6 +9,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
+// Components
+import { SearchComponent } from '../search/search.component';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -18,6 +21,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     RouterModule,
     MatIconModule,
     MatButtonModule,
+    SearchComponent,
     MatDividerModule,
     MatCheckboxModule,
     MatGridListModule,
@@ -26,6 +30,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   styleUrl: './header.component.sass',
 })
 export class HeaderComponent {
+  search = '';
+
+  // Get theme Dark or Light
   getTheme() {
     if (typeof document !== 'undefined') {
       return document.body.classList.contains('dark-theme');
@@ -34,6 +41,13 @@ export class HeaderComponent {
     return false;
   }
 
+  // Handle search Input
+  onChangeSearch(event: Event) {
+    // Get the new input value
+    this.search = (event.target as HTMLInputElement).value;
+  }
+
+  // Change the theme Dark or Light
   toggleTheme() {
     // add light-theme or dark-theme class to body
     if (document.body.classList.contains('dark-theme')) {

@@ -70,6 +70,18 @@ $dark-theme: mat.define-dark-theme(
 .bg_tertiary {
   background-color: mat.get-color-from-palette($tertiary);
 }
+.col_primary {
+  color: mat.get-color-from-palette($primary);
+}
+.col_secondary {
+  color: mat.get-color-from-palette($accent);
+}
+.col_warn {
+  color: mat.get-color-from-palette($warn);
+}
+.col_tertiary {
+  color: mat.get-color-from-palette($tertiary);
+}
 
 @include mat.all-component-themes($light-theme);
 
@@ -80,23 +92,32 @@ body.dark-theme {
   .bg_primary {
     background-color: mat.get-color-from-palette($dark-primary);
   }
-
   .bg_secondary {
     background-color: mat.get-color-from-palette($dark-accent);
   }
-
   .bg_warn {
     background-color: mat.get-color-from-palette($dark-warn);
   }
-
   .bg_tertiary {
     background-color: mat.get-color-from-palette($dark-tertiary);
+  }
+  .col_primary {
+    color: mat.get-color-from-palette($dark-primary);
+  }
+  .col_secondary {
+    color: mat.get-color-from-palette($dark-accent);
+  }
+  .col_warn {
+    color: mat.get-color-from-palette($dark-warn);
+  }
+  .col_tertiary {
+    color: mat.get-color-from-palette($dark-tertiary);
   }
 }
 
 // Initial Styles
 *:not(mat-icon) {
-  font-family: "Rubik", sans-serif !important;
+  font-family: "Oswald", sans-serif !important;
 }
 
 html,
@@ -106,33 +127,5 @@ body {
   margin: 0;
 }
 
-// Presets to use in all APP
-.container {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1320px;
-}
-
-@media (max-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-
-@media (max-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (max-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
+// Import Presets
+@import "./presets.sass";

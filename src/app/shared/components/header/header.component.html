@@ -14,31 +14,60 @@
       </a>
     </mat-grid-tile>
 
-    <!-- Info -->
+    <!-- Phone -->
     <mat-grid-tile>
-      <div class="info_container mat-typography">
-        <div class="bg_tertiary">
-          <mat-icon aria-hidden="false" color="accent" aria-label="Phone">
-            phone_in_talk
-          </mat-icon>
+      <div class="phone mat-typography">
+        <div class="bg_tertiary rounded">
+          <mat-icon color="accent" aria-label="Phone">phone_in_talk</mat-icon>
         </div>
-        <p>
-          Call Us:
-          <a href="tel:0123-456-7890" class="header-call__number"
-            >0123-456-7890</a
-          >
+        <p class="text_base">
+          Call Us :
+          <a href="tel:0123-456-7890" class="col_secondary">0123-456-7890</a>
         </p>
       </div>
     </mat-grid-tile>
+
+    <!-- Icons -->
     <mat-grid-tile>
-      <mat-icon>accessibility</mat-icon>
+      <div class="icons">
+        <!-- add two buttons to switch theme from light to dark -->
+        <div class="example-button-row">
+          <button (click)="toggleTheme()">Toggle Theme</button>
+        </div>
+        <div class="bg_tertiary rounded">
+          <mat-icon aria-label="Person">person</mat-icon>
+        </div>
+        <div class="bg_tertiary rounded">
+          <mat-icon aria-label="Favorite">favorite</mat-icon>
+          <span class="badge bg_secondary">0</span>
+        </div>
+        <div class="bg_tertiary rounded">
+          <mat-icon aria-label="Cart">shopping_cart</mat-icon>
+          <span class="badge bg_secondary">0</span>
+        </div>
+      </div>
     </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-button color="primary">Primary test</button>
-      <button mat-button color="accent">Accent</button>
-      <!-- add two buttons to switch theme from light to dark -->
-      <div class="example-button-row">
-        <button (click)="toggleTheme()">Toggle Theme</button>
+
+    <!-- Navbar -->
+    <mat-grid-tile colspan="3">
+      <div class="bg_secondary navbar text_base">
+        <ul class="">
+          <li>
+            <a [routerLink]="['/shop']" class="col_tertiary">All Shoes</a>
+          </li>
+          <li>
+            <a [routerLink]="['/shop?men']" class="col_tertiary">Men</a>
+          </li>
+          <li>
+            <a [routerLink]="['/shop?women']" class="col_tertiary">Men</a>
+          </li>
+          <li>
+            <a [routerLink]="['/shop?unisex']" class="col_tertiary">Men</a>
+          </li>
+        </ul>
+
+        <!-- Search -->
+        <app-search />
       </div>
     </mat-grid-tile>
   </mat-grid-list>
