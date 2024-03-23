@@ -31,19 +31,40 @@
     <mat-grid-tile>
       <div class="icons">
         <!-- add two buttons to switch theme from light to dark -->
-        <div class="example-button-row">
-          <button (click)="toggleTheme()">Toggle Theme</button>
+        <div class="bg_tertiary rounded" (click)="toggleTheme()">
+          <mat-icon aria-label="Person">
+            {{ getTheme() ? "dark_mode" : "light_mode" }}
+          </mat-icon>
         </div>
         <div class="bg_tertiary rounded">
-          <mat-icon aria-label="Person">person</mat-icon>
+          <mat-icon
+            aria-label="Person"
+            aria-hidden="false"
+            matBadge="1"
+            matBadgeColor="accent"
+          >
+            person
+          </mat-icon>
         </div>
         <div class="bg_tertiary rounded">
-          <mat-icon aria-label="Favorite">favorite</mat-icon>
-          <span class="badge bg_secondary">0</span>
+          <mat-icon
+            aria-label="Favorite"
+            aria-hidden="false"
+            matBadge="1"
+            matBadgeColor="accent"
+          >
+            favorite
+          </mat-icon>
         </div>
         <div class="bg_tertiary rounded">
-          <mat-icon aria-label="Cart">shopping_cart</mat-icon>
-          <span class="badge bg_secondary">0</span>
+          <mat-icon
+            aria-label="Cart"
+            aria-hidden="false"
+            matBadge="1"
+            matBadgeColor="accent"
+          >
+            shopping_cart
+          </mat-icon>
         </div>
       </div>
     </mat-grid-tile>

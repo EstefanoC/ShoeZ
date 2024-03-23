@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 // Dependencies
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 // Components
 import { SearchComponent } from '../search/search.component';
@@ -20,6 +21,7 @@ import { SearchComponent } from '../search/search.component';
     RouterOutlet,
     RouterModule,
     MatIconModule,
+    MatBadgeModule,
     MatButtonModule,
     SearchComponent,
     MatDividerModule,

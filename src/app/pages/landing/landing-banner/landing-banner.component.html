@@ -1,1 +1,24 @@
-<p>landing Banner works!</p>
+<section class="bg_warn">
+  <div class="container">
+    <mat-grid-list cols="5" rowHeight="50vh">
+      <!-- Left section -->
+      <mat-grid-tile colspan="2">
+        <div class="message">
+          <h2 class="text_xl">New Arrivals</h2>
+          <h1 class="text_h1">Best Shoes</h1>
+          <h2 class="text_lg">Name of Shoes</h2>
+          <button mat-raised-button color="primary" class="button">
+            Primary
+          </button>
+        </div>
+      </mat-grid-tile>
+
+      <!-- Right section -->
+      <mat-grid-tile colspan="3">
+        <div class="banner">
+          <app-banner />
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</section>

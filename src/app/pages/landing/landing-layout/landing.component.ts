@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
+// Components
+import { LandingBannerComponent } from '../landing-banner/landing-banner.component';
+
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [],
+  imports: [LandingBannerComponent],
   templateUrl: './landing.component.html',
-  styleUrl: './landing.component.sass'
+  styleUrl: './landing.component.sass',
 })
-export class LandingComponent {
-
-}
+export class LandingComponent {}
