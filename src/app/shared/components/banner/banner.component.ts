@@ -1,10 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  Output,
-  EventEmitter,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, Output, EventEmitter } from '@angular/core';
 
 // Dependencies
 import 'atropos/css/min';
@@ -45,7 +39,7 @@ export class BannerComponent implements AfterViewInit {
     Infinity: true,
     autoplay: true,
     speed: 800,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 5000,
     fade: true,
     cssEaser: 'linear',
   };
@@ -53,28 +47,19 @@ export class BannerComponent implements AfterViewInit {
   @Output() newEmitter = new EventEmitter<string>();
 
   beforeChange(e: any) {
-    this.slidePos = this.slides[e.currentSlide + 1].title;
-    this.newEmitter.emit(this.slides[e.currentSlide + 1].title);
+    this.newEmitter.emit(this.slides[e.nextSlide].title);
   }
 
   ngAfterViewInit(): void {
-    // const atropos = Atropos({
-    //   el: '.my-atropos',
-    //   activeOffset: 40,
-    //   alwaysActive: true,
-    //   highlight: true,
-    //   shadowScale: 1.05,
-    //   rotateXMax: 1,
-    //   rotateYMax: 1,
-    //   // onEnter() {
-    //   //   console.log('Enter');
-    //   // },
-    //   // onLeave() {
-    //   //   console.log('Leave');
-    //   // },
-    //   // onRotate(x, y) {
-    //   //   console.log('Rotate', x, y);
-    //   // },
-    // });
+    const atropos = Atropos({
+      el: '.my-atropos',
+      activeOffset: 0,
+      alwaysActive: true,
+      shadow: false,
+      highlight: false,
+      shadowScale: 0,
+      rotateXMax: 6,
+      rotateYMax: 6,
+    });
   }
 }

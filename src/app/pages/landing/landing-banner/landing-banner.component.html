@@ -1,23 +1,23 @@
-<section class="bg_warn">
-  <div class="container">
-    <mat-grid-list cols="5" rowHeight="700px">
+<section class="bg_warn bg_tertiary_before">
+  <div class="container bg_tertiary_before">
+    <mat-grid-list cols="5" rowHeight="600px">
       <!-- Left section -->
-      <mat-grid-tile colspan="2">
-        <div class="message">
-          <h2 class="text_xl">New Arrivals</h2>
-          <h1 class="text_h1">Best Shoes</h1>
-          <h2 class="text_lg">{{ title2 }}</h2>
-          <h2 class="text_lg">{{ title }}</h2>
-          <button mat-raised-button color="primary" class="button">
-            Primary
-          </button>
+      <mat-grid-tile colspan="2" style="overflow: visible">
+        <div
+          class="message"
+          [@showText]="this.animationShow ? 'show' : 'hidden'"
+        >
+          <h2 class="text_xl col_tertiary">New Arrivals</h2>
+          <h1 class="text_h1 col_tertiary">{{ title }}</h1>
+          <h2 class="text_xl col_tertiary">Best Shoes</h2>
+          <button mat-raised-button color="primary" class="button">Shop</button>
         </div>
       </mat-grid-tile>
 
       <!-- Right section -->
       <mat-grid-tile colspan="3" style="overflow: visible">
         <div class="banner">
-          <app-banner (newEmitter)="this.title = $event" />
+          <app-banner (newEmitter)="changeModal($event)" />
         </div>
       </mat-grid-tile>
     </mat-grid-list>

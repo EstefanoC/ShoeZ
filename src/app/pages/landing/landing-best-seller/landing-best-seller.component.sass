@@ -1,0 +1,94 @@
+section
+  position: relative
+  .top_section
+    position: relative
+    padding: 20rem 3rem
+    padding-top: 11rem
+    margin-bottom: -15rem
+    z-index: 1
+    > .image_container
+      position: absolute
+      top: 0
+      left: 0
+      width: 50%
+      height: 100%
+      z-index: -1
+      > img
+        width: 100%
+        height: 100%
+        object-fit: cover
+      &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 100%
+        height: 100%
+    > div > div
+      display: flex
+      flex-direction: column
+      gap: 1rem
+      align-items: center
+      justify-content: center
+      width: 100%
+      height: 100%
+      z-index: 1
+      > .icon
+        font-size: 42px
+        width: 42px
+        height: 42px
+  .bottom_section
+    min-height: 15rem
+    z-index: 10
+    .product_card
+      position: relative
+      z-index: 10
+      & > div:first-child
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 30px
+        border-radius: 10px
+        left: 30px
+      > img
+        position: relative
+        top: 15px
+        right: 40px
+        width: calc(100% - 1.5rem)
+        height: 100%
+        z-index: 1
+        &:hover + .content > div
+          bottom: 15px
+      .content
+        position: absolute
+        bottom: 15px
+        right: 15px
+        width: calc(100% - 15px)
+        height: calc(100% - 15px)
+        padding: 2rem
+        padding-bottom: 0
+        border-radius: 15px
+        overflow: hidden
+        box-shadow: 10px 10px 15px #0003
+        &:hover > div
+          bottom: 15px
+        > div
+          position: absolute
+          bottom: -50px
+          right: 10px
+          display: flex
+          flex-direction: row-reverse
+          gap: 15px
+          align-items: center
+          z-index: 3
+          -ms-writing-mode: tb-rl
+          writing-mode: tb-rl
+          transform: rotate(180deg)
+          overflow: hidden
+          transition:  all .3s ease
+          button
+            box-shadow: 0 0px 6px -2px #0000008f !important
+            // cursor: pointer
+            // padding: 1rem
+            // border-radius: 100%
+

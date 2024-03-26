@@ -1,0 +1,57 @@
+<section>
+  <div class="bg_background top_section">
+    <div class="image_container bg_background_before_gradient">
+      <img
+        src="../../assets/image/landing_bestSeller_bg.webp"
+        alt="ShoeZ Basket"
+      />
+    </div>
+
+    <!-- Top Section -->
+    <div class="container">
+      <div class="col_tertiary">
+        <mat-icon aria-label="deals" aria-hidden="false" class="icon">
+          hotel_class
+        </mat-icon>
+        <strong class="text_base">Best Deals</strong>
+        <p class="text_base">
+          we believe that the right pair of sports shoes can make all the
+          difference in your athletic journey.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom_section">
+    <mat-grid-list cols="3" rowHeight="500px">
+      @for (tile of tiles; track tile) {
+      <mat-grid-tile>
+        <div class="product_card">
+          <div [style.background]="tile.color"></div>
+          <img src="{{ tile.image }}" alt="ShoeZ Product Image" />
+          <div class="content bg_tertiary">
+            <div>
+              <h2 class="text_xl col_primary">{{ tile.text }} Shoe</h2>
+              <button
+                mat-mini-fab
+                color="secondary"
+                aria-label="Button to shop"
+              >
+                <mat-icon
+                  aria-label="south"
+                  color="tertiary"
+                  aria-hidden="false"
+                  class="icon"
+                >
+                  south
+                </mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-grid-tile>
+      }
+    </mat-grid-list>
+  </div>
+</section>
