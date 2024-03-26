@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 // Dependencies
 import { MatButtonModule } from '@angular/material/button';
@@ -13,4 +13,13 @@ import { BannerComponent } from '../../../shared/components/banner/banner.compon
   templateUrl: './landing-banner.component.html',
   styleUrl: './landing-banner.component.sass',
 })
-export class LandingBannerComponent {}
+export class LandingBannerComponent {
+  title = '';
+  @ViewChild(BannerComponent, { static: true }) banner!: any;
+
+  title2 = this.banner?.slidePos;
+
+  ngAfterViewInit(): void {
+    this.title = this.banner.slidePos;
+  }
+}

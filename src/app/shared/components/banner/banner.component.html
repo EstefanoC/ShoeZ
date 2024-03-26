@@ -6,40 +6,18 @@
       <div class="atropos-rotate">
         <!-- inner container (required) -->
         <div class="atropos-inner">
-          <swiper-container
-            loop="true"
-            navigation="true"
-            grab-cursor="true"
-            crossFade="true"
-            effect="fade"
-            navigation-disabled-class=""
-            navigation-hide=""
+          <ngx-slick-carousel
+            class="carousel"
+            #slickModal="slick-carousel"
+            [config]="slideConfig"
+            (beforeChange)="beforeChange($event)"
           >
-            <swiper-slide>
-              <div>
-                <img
-                  src="../../../../assets/image/Landing_banner_1.webp"
-                  data-atropos-offset="-5"
-                />
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-              <div>
-                <img
-                  src="../../../../assets/image/Landing_banner_2.webp"
-                  data-atropos-offset="-5"
-                />
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-              <div>
-                <img
-                  src="../../../../assets/image/Landing_banner_3.webp"
-                  data-atropos-offset="-5"
-                />
-              </div>
-            </swiper-slide>
-          </swiper-container>
+            @for (slide of slides; track slide.img) {
+            <div ngxSlickItem class="slide">
+              <img src="{{ slide.img }}" alt="ShoeZ some Shoes" width="100%" />
+            </div>
+            }
+          </ngx-slick-carousel>
         </div>
       </div>
     </div>

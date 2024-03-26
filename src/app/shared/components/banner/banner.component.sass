@@ -5,17 +5,22 @@
 //   width: 600px
 //   height: 300px
 
-.swiper-slide-active
-  opacity: 1!important
-swiper-slide
+.banner
   position: relative
-  height: 100%
-  opacity: 0!important
-  > div
+  top: 7rem
+  max-height: 100%
+  ngx-slick-carousel
     position: relative
+    cursor: grab
     height: 100%
-    width: 100%
-    > img
+    .slide
+      position: relative
+      height: 100%
+      width: 100%
       object-fit: cover
       width: 100%
       height: 100%
+      > img
+        object-fit: cover
+        width: 100%
+        height: 100%
