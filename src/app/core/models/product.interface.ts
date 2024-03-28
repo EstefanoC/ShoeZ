@@ -12,3 +12,11 @@ export interface Product {
     number: number;
   };
 }
+
+export interface ProductCard {
+  img: string;
+  title: string;
+  price: number;
+  review: number;
+  discount?: number;
+}

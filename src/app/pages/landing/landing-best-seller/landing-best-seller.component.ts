@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 
-export interface Tile {
+export interface Categories {
   text: string;
   image: string;
   color: string;
@@ -19,7 +19,7 @@ export interface Tile {
   styleUrl: './landing-best-seller.component.sass',
 })
 export class LandingBestSellerComponent {
-  tiles: Tile[] = [
+  categories: Categories[] = [
     {
       text: 'Sport',
       image: '../../assets/image/landing_bestSeller_shoe1.webp',

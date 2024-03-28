@@ -25,14 +25,14 @@
   <!-- Bottom Section -->
   <div class="bottom_section">
     <mat-grid-list cols="3" rowHeight="500px">
-      @for (tile of tiles; track tile) {
+      @for (category of categories; track categories) {
       <mat-grid-tile>
         <div class="product_card">
-          <div [style.background]="tile.color"></div>
-          <img src="{{ tile.image }}" alt="ShoeZ Product Image" />
+          <div [style.background]="category.color"></div>
+          <img src="{{ category.image }}" alt="ShoeZ Product Image" />
           <div class="content bg_tertiary">
             <div>
-              <h2 class="text_xl col_primary">{{ tile.text }} Shoe</h2>
+              <h2 class="text_xl col_primary">{{ category.text }} Shoe</h2>
               <button
                 mat-mini-fab
                 color="secondary"
