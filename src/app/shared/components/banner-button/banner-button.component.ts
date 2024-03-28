@@ -1,7 +1,16 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 
 // Dependencies
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import {
+  SlickCarouselComponent,
+  SlickCarouselModule,
+} from 'ngx-slick-carousel';
 
 // Ts
 import { CardComponent } from '../card/card.component';
@@ -12,10 +21,22 @@ import { ProductCard } from '../../../core/models/product.interface';
   standalone: true,
   imports: [SlickCarouselModule, CardComponent],
   templateUrl: './banner-button.component.html',
-  styleUrl: './banner-button.component.sass',
 })
 export class BannerButtonComponent {
   @Input() slideConfig = {};
   @Input() slides: ProductCard[] | [] = [];
-  @Input() nextSlide = {};
+  @Output() changeCarrousel = new EventEmitter<any>();
+  @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
+
+  beforeChange(e: any) {
+    this.changeCarrousel.emit(e);
+  }
+
+  nextSlide() {
+    this.slickModal.slickNext();
+  }
+
+  prevSlide() {
+    this.slickModal.slickPrev();
+  }
 }

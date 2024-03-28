@@ -1,7 +1,8 @@
 <ngx-slick-carousel
-  class="carousel"
+  class="carouselButton"
   #slickModal="slick-carousel"
   [config]="slideConfig"
+  (beforeChange)="beforeChange($event)"
 >
   @for (slide of slides; track slide) {
   <div ngxSlickItem class="slide">
@@ -9,5 +10,3 @@
   </div>
   }
 </ngx-slick-carousel>
-
-<button (click)="slickModal.slickNext()">slickGoto 2</button>

@@ -1,19 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 // Dependencies
 import { MatIconModule } from '@angular/material/icon';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { ProductCard } from '../../../core/models/product.interface';
+import { MatButtonModule } from '@angular/material/button';
+import {
+  SlickCarouselComponent,
+  SlickCarouselModule,
+} from 'ngx-slick-carousel';
+
+// Components
 import { BannerButtonComponent } from '../../../shared/components/banner-button/banner-button.component';
+
+// Ts
+import { ProductCard } from '../../../core/models/product.interface';
 
 @Component({
   selector: 'app-landing-flash',
   standalone: true,
-  imports: [MatIconModule, SlickCarouselModule, BannerButtonComponent],
+  imports: [
+    MatIconModule,
+    MatButtonModule,
+    SlickCarouselModule,
+    BannerButtonComponent,
+  ],
   templateUrl: './landing-flash.component.html',
   styleUrl: './landing-flash.component.sass',
 })
 export class LandingFlashComponent {
+  @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
+
+  currentSlide: number = 1;
+  slideShow: number = 3;
   slides: ProductCard[] = [
     {
       img: '../../../../assets/image/products/Jordan 11 Retro Low IE White Gym Red.avif',
@@ -44,7 +61,7 @@ export class LandingFlashComponent {
       review: 3.5,
     },
     {
-      img: "../../../../assets/image/products/Nike Air Max 1 '86 OG Big Bubble Air Max Day (2024).avi",
+      img: "../../../../assets/image/products/Nike Air Max 1 '86 OG Big Bubble Air Max Day (2024).avif",
       title: "Nike Air Max 1 '86 OG Big Bubble Air Max Day (2024)",
       price: 805,
       discount: 5,
@@ -80,9 +97,17 @@ export class LandingFlashComponent {
     },
   ];
   slideConfig = {
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: this.slideShow,
+    slidesToScroll: this.slideShow,
     infinite: false,
     speed: 800,
   };
+
+  changeCarousel(e: any) {
+    this.currentSlide = (e.nextSlide + this.slideShow) / this.slideShow;
+  }
+
+  next() {
+    console.log('next', this.slickModal.slickNext());
+  }
 }
