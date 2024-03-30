@@ -13,8 +13,8 @@ import {
 } from 'ngx-slick-carousel';
 
 // Ts
-import { CardComponent } from '../card/card.component';
-import { ProductCard } from '../../../core/models/product.interface';
+import { CardComponent } from '../../product-card/card/card.component';
+import { ProductCard } from '../../../../core/models/product.interface';
 
 @Component({
   selector: 'app-banner-button',

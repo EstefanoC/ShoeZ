@@ -1,0 +1,17 @@
+<div class="review">
+  @for (star of stars; track stars) {
+  <button mat-mini-fab aria-label="star" disabled>
+    <mat-icon
+      aria-label="star"
+      color="tertiary"
+      aria-hidden="false"
+      class="icon {{
+        calculateReview(review, star.value) === 'star_rate' &&
+          'material-icons-outlined'
+      }}"
+    >
+      {{ calculateReview(review, star.value) }}
+    </mat-icon>
+  </button>
+  }
+</div>

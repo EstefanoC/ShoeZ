@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 // Components
-import { BannerComponent } from '../../../shared/components/banner/banner.component';
+import { BannerComponent } from '../../../shared/components/landing/banner/banner.component';
 
 @Component({
   selector: 'app-landing-banner',

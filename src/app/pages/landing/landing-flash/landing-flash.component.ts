@@ -9,7 +9,7 @@ import {
 } from 'ngx-slick-carousel';
 
 // Components
-import { BannerButtonComponent } from '../../../shared/components/banner-button/banner-button.component';
+import { BannerButtonComponent } from '../../../shared/components/landing/banner-button/banner-button.component';
 
 // Ts
 import { ProductCard } from '../../../core/models/product.interface';
@@ -35,8 +35,8 @@ export class LandingFlashComponent {
     {
       img: '../../../../assets/image/products/Jordan 11 Retro Low IE White Gym Red.avif',
       title: 'Jordan 11 Retro Low IE White Gym Red',
-      price: 145,
-      discount: 10,
+      price: 155,
+      discount: 9,
       review: 4.5,
     },
     {
@@ -105,9 +105,5 @@ export class LandingFlashComponent {
 
   changeCarousel(e: any) {
     this.currentSlide = (e.nextSlide + this.slideShow) / this.slideShow;
-  }
-
-  next() {
-    console.log('next', this.slickModal.slickNext());
   }
 }
