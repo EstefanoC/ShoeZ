@@ -35,6 +35,29 @@
   min-height: 55px
   min-width: 155px!important
 
+.image_hover
+  position: relative
+  overflow: hidden
+  &::before
+    background: linear-gradient(90deg, rgba(255,255,255,0.25) 0%, rgba(255,1,1,0) 100%)
+    content: ""
+    display: block
+    height: 100%
+    left: -75%
+    position: absolute
+    top: 0
+    transform: skewX(-25deg)
+    width: 25%
+    z-index: 2
+  &:hover
+    &::before
+      animation: shine 0.90s
+
+// Animation
+@keyframes shine
+  100%
+    left: 125%
+
 .rounded
   position: relative
   width: 50px

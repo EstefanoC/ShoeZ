@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+
+// Component
+import { BannerSingleComponent } from '../../../shared/components/landing/banner-single/banner-single.component';
+
+// ts
 import { ProductCard } from '../../../core/models/product.interface';
 
 @Component({
-  selector: 'app-landing-tending',
+  selector: 'app-landing-trending',
   standalone: true,
-  imports: [],
+  imports: [BannerSingleComponent],
   templateUrl: './landing-trending.component.html',
   styleUrl: './landing-trending.component.sass',
 })
@@ -30,11 +35,24 @@ export class LandingTrendingComponent {
       review: 5,
     },
   ];
-  slideConfig = {
+  slideConfigGlobal = {
     slidesToShow: 1,
     slidesToScroll: 1,
-    infinite: false,
+    infinite: true,
+    draggable: true,
     speed: 800,
+  };
+  slideConfig1 = {
+    ...this.slideConfigGlobal,
+    prevArrow: '.single-feedback .prev-arrow',
+    nextArrow: '.single-feedback .next-arrow',
+    asNavFor: '.slick-single_carousel',
+  };
+  slideConfig2 = {
+    ...this.slideConfigGlobal,
+    prevArrow: '.image-feedback .prev-arrow',
+    nextArrow: '.image-feedback .next-arrow',
+    asNavFor: '.slick-image_carousel',
   };
 
   changeCarousel(e: any) {

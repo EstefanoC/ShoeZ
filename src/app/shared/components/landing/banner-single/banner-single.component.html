@@ -1,0 +1,35 @@
+<div class="carousel">
+  <!-- Image -->
+  <div class="single_image">
+    <ngx-slick-carousel
+      class="carousel slick-image_carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig1"
+    >
+      @for (slide of slides; track slide) {
+      <div ngxSlickItem class="slide_img">
+        <div class="image_hover">
+          <img [src]="changeImageSrc(slide)" alt="{{ slide.title }}" />
+        </div>
+      </div>
+      }
+    </ngx-slick-carousel>
+  </div>
+
+  <!-- Product -->
+  <div class="single_product bg_tertiary">
+    <div>
+      <h2 class="text_xl">TRENDING NOW</h2>
+
+      <ngx-slick-carousel
+        class="carousel slick-single_carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig2"
+      >
+        @for (slide of slides; track slide) {
+        <app-card ngxSlickItem [data]="slide" />
+        }
+      </ngx-slick-carousel>
+    </div>
+  </div>
+</div>
