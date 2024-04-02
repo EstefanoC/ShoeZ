@@ -15,6 +15,7 @@
   </div>
 
   <!-- Discount Tag -->
+  @if (data.discount) {
   <span class="discount bg_primary text_small">
     <mat-icon
       aria-label="bolt"
@@ -24,6 +25,7 @@
     >
       bolt
     </mat-icon>
-    {{ data.discount }}%</span
-  >
+    {{ data.discount }}%
+  </span>
+  }
 </div>

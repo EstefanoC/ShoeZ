@@ -5,4 +5,15 @@
     [slideConfig2]="slideConfig2"
     [slides]="slides"
   />
+
+  <!-- Grid Layout -->
+  <mat-grid-list cols="4" rowHeight="425px">
+    @for (card of ads; track ads) {
+    <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
+      <div style="width: 100%; height: 100%">
+        <app-card-ads [data]="card" />
+      </div>
+    </mat-grid-tile>
+    }
+  </mat-grid-list>
 </section>

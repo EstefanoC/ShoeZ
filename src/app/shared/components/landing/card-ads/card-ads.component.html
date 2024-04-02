@@ -1,0 +1,46 @@
+<div class="card {{ data.image ? 'full' : '' }}">
+  <!-- Print Title -->
+  @if (!data.image) {
+  <div class="content">
+    <h2 class="text_base">{{ data.title }}</h2>
+  </div>
+  }
+
+  <!-- Print Image -->
+  <div class="{{ data.image ? 'image_only image_hover' : 'image' }}">
+    <img src="{{ data.img }}" alt="{{ data.title }}" />
+  </div>
+
+  <!-- Print Price -->
+  @if (!data.image) {
+  <div class="content_price">
+    <app-price [price]="data.price" [discount]="data.discount" />
+
+    <button mat-mini-fab color="primary" aria-label="Button to shop">
+      <mat-icon
+        aria-label="east"
+        color="tertiary"
+        aria-hidden="false"
+        class="icon"
+      >
+        east
+      </mat-icon>
+    </button>
+  </div>
+  }
+
+  <!-- Discount Tag -->
+  @if (data.discount && !data.image) {
+  <span class="discount bg_primary text_small">
+    <mat-icon
+      aria-label="bolt"
+      color="tertiary"
+      aria-hidden="false"
+      class="icon"
+    >
+      bolt
+    </mat-icon>
+    {{ data.discount }}%
+  </span>
+  }
+</div>

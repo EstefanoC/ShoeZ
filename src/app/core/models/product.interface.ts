@@ -20,3 +20,9 @@ export interface ProductCard {
   review: number;
   discount?: number;
 }
+
+export interface ProductsAds extends ProductCard {
+  cols: number;
+  rows: number;
+  image: boolean;
+}

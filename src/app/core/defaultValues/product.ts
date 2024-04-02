@@ -1,7 +1,21 @@
-export const ProductCardDefault = {
+// Ts
+import { ProductCard, ProductsAds } from '../models/product.interface';
+
+export const ProductCardDefault: ProductCard = {
   img: '',
   title: '',
   price: 0,
   review: 0,
   discount: 0,
+};
+
+export const ProductAdsDefault: ProductsAds = {
+  img: '',
+  title: '',
+  price: 0,
+  review: 0,
+  discount: 0,
+  rows: 1,
+  cols: 1,
+  image: true,
 };
