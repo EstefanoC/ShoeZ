@@ -1,0 +1,75 @@
+<p>landing-categories works!</p>
+<section class="container">
+  <!-- Top Section -->
+  <div class="top">
+    <div class="title">
+      <mat-icon
+        aria-label="bolt"
+        color="primary"
+        aria-hidden="false"
+        class="icon"
+      >
+        bolt
+      </mat-icon>
+      <h2 class="text_xl">FLASH SALE</h2>
+    </div>
+    <div class="arrows">
+      <button
+        mat-mini-fab
+        color="secondary"
+        aria-label="prev"
+        id="prev-button-flash"
+        (click)="carousel.prevSlide()"
+        disabled="{{ this.currentSlide === 1 }}"
+      >
+        <mat-icon
+          aria-label="prev"
+          color="tertiary"
+          aria-hidden="false"
+          class="icon"
+          id="prev-button-flash"
+        >
+          west
+        </mat-icon>
+      </button>
+      <span class="text_lg">
+        {{ this.currentSlide }} - {{ this.slideShow }}
+      </span>
+      <button
+        mat-mini-fab
+        color="secondary"
+        aria-label="next"
+        id="next-button-flash"
+        (click)="carousel.nextSlide()"
+        disabled="{{ this.currentSlide === this.slideShow }}"
+      >
+        <mat-icon
+          aria-label="next"
+          color="tertiary"
+          aria-hidden="false"
+          class="icon"
+        >
+          east
+        </mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="bottom">
+    <!-- Banner -->
+    <app-banner-button
+      [slides]="slides"
+      [slideConfig]="slideConfig"
+      (changeCarrousel)="changeCarousel($event)"
+      #carousel
+    />
+
+    <div class="title bg_tertiary">
+      <span class="text_lg col_primary"><p>DAILY DEALS</p></span>
+      <span class="text_xl col_primary"><p>FLASH SALE</p></span>
+    </div>
+
+    <div class="background bg_tertiary"></div>
+  </div>
+</section>

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { LandingFlashComponent } from '../landing-flash/landing-flash.component';
 import { LandingBannerComponent } from '../landing-banner/landing-banner.component';
 import { LandingTrendingComponent } from '../landing-trending/landing-trending.component';
+import { LandingCategoriesComponent } from '../landing-categories/landing-categories.component';
 import { LandingBestSellerComponent } from '../landing-best-seller/landing-best-seller.component';
 
 @Component({
@@ -14,6 +15,7 @@ import { LandingBestSellerComponent } from '../landing-best-seller/landing-best-
     LandingBannerComponent,
     LandingTrendingComponent,
     LandingBestSellerComponent,
+    LandingCategoriesComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.sass',

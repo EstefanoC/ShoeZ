@@ -26,3 +26,5 @@ export interface ProductsAds extends ProductCard {
   rows: number;
   image: boolean;
 }
+
+export type ProductCategories = 'men' | 'women' | 'kids';
