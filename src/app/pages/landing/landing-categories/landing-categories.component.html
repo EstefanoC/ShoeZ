@@ -1,17 +1,27 @@
-<p>landing-categories works!</p>
 <section class="container">
   <!-- Top Section -->
   <div class="top">
-    <div class="title">
+    <div class="category">
       <mat-icon
-        aria-label="bolt"
-        color="primary"
+        aria-label="new releases"
         aria-hidden="false"
+        color="primary"
         class="icon"
+        [@selected]="this.categorySelected"
       >
-        bolt
+        new_releases
       </mat-icon>
-      <h2 class="text_xl">FLASH SALE</h2>
+      <div class="category_button">
+        @for (cat of categories; track categories) {
+        <h2
+          class="text_xl {{ cat === categorySelected ? 'active' : '' }}"
+          [@selected]="cat === categorySelected ? 'selected' : 'hidden'"
+          (click)="this.categorySelected = cat"
+        >
+          {{ cat }}
+        </h2>
+        }
+      </div>
     </div>
     <div class="arrows">
       <button
@@ -51,6 +61,19 @@
         >
           east
         </mat-icon>
+      </button>
+    </div>
+    <div class="button">
+      <button
+        class="button"
+        mat-flat-button
+        color="primary"
+        id="next-button-flash"
+        aria-label="go to shop"
+        (click)="carousel.nextSlide()"
+        disabled="{{ this.currentSlide === this.slideShow }}"
+      >
+        View All
       </button>
     </div>
   </div>

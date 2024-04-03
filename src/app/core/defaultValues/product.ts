@@ -1,5 +1,9 @@
 // Ts
-import { ProductCard, ProductsAds } from '../models/product.interface';
+import {
+  ProductCard,
+  ProductCategories,
+  ProductsAds,
+} from '../models/product.interface';
 
 export const ProductCardDefault: ProductCard = {
   img: '',
@@ -19,3 +23,9 @@ export const ProductAdsDefault: ProductsAds = {
   cols: 1,
   image: true,
 };
+
+export const ProductCategoriesDefault: ProductCategories[] = [
+  'men',
+  'women',
+  'kids',
+];

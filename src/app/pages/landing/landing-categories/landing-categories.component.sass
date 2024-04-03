@@ -1,21 +1,34 @@
 section
-  margin: 8rem 0
+  margin: 8rem auto
   .top
     display: flex
     justify-content: space-between
     align-items: center
     gap: 10px
     padding-bottom: 2rem
-    .title
+    .category
+      position: relative
       display: flex
       align-items: center
       justify-content: start
       gap: 0
       .icon
-        font-size: 60px
-        width: 60px
-        height: 60px
-        margin-right: 15px
+        position: absolute
+        top: 50%
+        left: 0
+        font-size: 32px
+        width: 32px
+        height: 32px
+        transform: translateY(calc(-50% + 5px))
+        transition: all .3s ease
+      .category_button
+        display: flex
+        align-items: center
+        gap: 3rem
+        > h2
+          padding: 0 0.3rem
+          cursor: pointer
+          transition: all .3s ease
     .arrows
       display: flex
       align-items: center

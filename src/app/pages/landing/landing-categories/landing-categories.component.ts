@@ -1,4 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 // Dependencies
 import { MatIconModule } from '@angular/material/icon';
@@ -11,7 +18,8 @@ import {
 // Components
 import { BannerButtonComponent } from '../../../shared/components/landing/banner-button/banner-button.component';
 
-// Ts
+// Core
+import { ProductCategoriesDefault } from '../../../core/defaultValues/product';
 import {
   ProductCard,
   ProductCategories,
@@ -20,6 +28,44 @@ import {
 @Component({
   selector: 'app-landing-categories',
   standalone: true,
+  animations: [
+    trigger('selected', [
+      state(
+        'selected',
+        style({
+          opacity: 1,
+          transform: 'translateX(32px)',
+        })
+      ),
+      state(
+        'hidden',
+        style({
+          opacity: 0.5,
+          transform: 'translateX(0)',
+        })
+      ),
+      state(
+        'men',
+        style({
+          transform: ' translateY(calc(-50% + 5px)) translateX(0)',
+        })
+      ),
+      state(
+        'women',
+        style({
+          transform: 'translateY(calc(-50% + 5px)) translateX(6.5rem)',
+        })
+      ),
+      state(
+        'kids',
+        style({
+          transform: 'translateY(calc(-50% + 5px)) translateX(15rem)',
+        })
+      ),
+      transition('selected => hidden', [animate('0.5s')]),
+      transition('hidden => show', [animate('0.5s')]),
+    ]),
+  ],
   imports: [
     MatIconModule,
     MatButtonModule,
@@ -32,7 +78,8 @@ import {
 export class LandingCategoriesComponent {
   @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
 
-  category: ProductCategories = 'men';
+  categorySelected: ProductCategories = 'men';
+  categories: ProductCategories[] = ProductCategoriesDefault;
 
   currentSlide: number = 1;
   slideShow: number = 3;
