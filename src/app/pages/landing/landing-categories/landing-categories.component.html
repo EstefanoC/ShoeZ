@@ -1,6 +1,7 @@
 <section class="container">
   <!-- Top Section -->
   <div class="top">
+    <!-- Categories -->
     <div class="category">
       <mat-icon
         aria-label="new releases"
@@ -11,6 +12,8 @@
       >
         new_releases
       </mat-icon>
+
+      <!-- Categories for to print -->
       <div class="category_button">
         @for (cat of categories; track categories) {
         <h2
@@ -23,6 +26,8 @@
         }
       </div>
     </div>
+
+    <!-- Arrows to slide -->
     <div class="arrows">
       <button
         mat-mini-fab
@@ -63,6 +68,8 @@
         </mat-icon>
       </button>
     </div>
+
+    <!-- Button -->
     <div class="button">
       <button
         class="button"
