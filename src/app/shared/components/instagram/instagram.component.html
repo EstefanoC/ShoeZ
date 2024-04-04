@@ -1,0 +1,44 @@
+<div class="container instagram_grid">
+  <mat-grid-list cols="4" rowHeight="2:2" [gutterSize]="'1rem'">
+    <!-- Print all Instagram Post -->
+    @for (instagram of data; track data; let i = $index) {
+    <!-- Print Unique text -->
+    @if (i === 1) {
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <div class="instagram_card_unique">
+        <h2 class="text_xl">
+          <img src="../../../../assets/image/instagram.svg" /> Follow us
+        </h2>
+
+        <div class="text_base">
+          <p>Search as <span class="col_primary">&#64;ShoeZ</span></p>
+          <p>tag us in your story</p>
+          <p>
+            share your style with
+            <span class="col_primary">&#64;shoeZtyle</span>
+          </p>
+        </div>
+
+        <button mat-flat-button color="primary">View Instagram</button>
+      </div>
+    </mat-grid-tile>
+    }
+
+    <!-- Print Normal Image -->
+    <mat-grid-tile>
+      <div class="instagram_card">
+        <img src="{{ instagram.img }}" alt="ShoeZ Instagram" />
+
+        <!-- Background of hover -->
+        <div class="bg_primary"></div>
+
+        <!-- Logo Instagram -->
+        <img
+          src="../../../../assets/image/instagram.svg"
+          class="instagram_logo col_primary"
+        />
+      </div>
+    </mat-grid-tile>
+    }
+  </mat-grid-list>
+</div>

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { LandingFlashComponent } from '../landing-flash/landing-flash.component';
 import { LandingBannerComponent } from '../landing-banner/landing-banner.component';
 import { LandingTrendingComponent } from '../landing-trending/landing-trending.component';
+import { InstagramComponent } from '../../../shared/components/instagram/instagram.component';
 import { LandingCategoriesComponent } from '../landing-categories/landing-categories.component';
 import { LandingBestSellerComponent } from '../landing-best-seller/landing-best-seller.component';
 import { CustomerComponent } from '../../../shared/components/customer/customer-layout/customer.component';
@@ -13,6 +14,7 @@ import { CustomerComponent } from '../../../shared/components/customer/customer-
   standalone: true,
   imports: [
     CustomerComponent,
+    InstagramComponent,
     LandingFlashComponent,
     LandingBannerComponent,
     LandingTrendingComponent,
