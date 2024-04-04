@@ -1,26 +1,89 @@
-<footer color="primary" class="container">
-  <mat-grid-list cols="3">
-    <mat-grid-tile>
-      <img
-        [attr.src]="
-          getTheme()
-            ? '../../assets/image/LogoDark.png'
-            : '../../assets/image/LogoLight.png'
-        "
-      />
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-icon aria-hidden="false" aria-label="Example home icon">
-        home
-      </mat-icon>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <button mat-button color="primary">Primary</button>
-      <button mat-button color="accent">Accent</button>
-      <!-- add two buttons to switch theme from light to dark -->
-      <div class="example-button-row">
-        <button (click)="toggleTheme()">Toggle Theme</button>
-      </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+<footer class="bg_warn">
+  <!-- Background Image -->
+  <img
+    src="../../../../assets/image/footer_background.webp"
+    alt="ShoeZ"
+    class="footer_background"
+  />
+
+  <div class="container">
+    <mat-grid-list cols="3" rowHeight="2:2">
+      <!-- Logo -->
+      <mat-grid-tile>
+        <div class="logo_footer">
+          <h2 class="text_lg col_tertiary">COMPANY</h2>
+
+          <a [routerLink]="['/']">
+            <img
+              [attr.src]="
+                getTheme()
+                  ? '../../assets/image/LogoDark.png'
+                  : '../../assets/image/LogoLight.png'
+              "
+              alt="ShoeZ Logo"
+            />
+          </a>
+          <p class="text_base col_tertiary">The best in sport</p>
+        </div>
+      </mat-grid-tile>
+
+      <!-- Contact -->
+      <mat-grid-tile>
+        <div class="logo_contact">
+          <h2 class="text_lg col_tertiary">INFO</h2>
+
+          <ul>
+            <li class="col_tertiary">
+              <mat-icon color="accent" aria-label="Phone"
+                >phone_in_talk</mat-icon
+              >
+              <p>Call Us :</p>
+              <span>0123-456-7890</span>
+            </li>
+            <li class="col_tertiary">
+              <mat-icon color="accent" aria-label="Email">email</mat-icon>
+              <p>Email :</p>
+              <span>info&#64;shoez.com</span>
+            </li>
+            <li class="col_tertiary">
+              <mat-icon color="accent" aria-label="Schedule">schedule</mat-icon>
+              <p>Time :</p>
+              <span>Monday till Friday 10 to 6 EST</span>
+            </li>
+          </ul>
+        </div>
+      </mat-grid-tile>
+
+      <!-- Email Catcher -->
+      <mat-grid-tile>
+        <div class="email_footer">
+          <h2 class="text_lg col_tertiary">NEWSLETTER</h2>
+          <p class="text_small col_tertiary">
+            Get 15% off your first purchase! Plus
+          </p>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              [formControl]="emailFormControl"
+              placeholder="Ex. pat@example.com"
+            />
+            @if (emailFormControl.hasError('email') &&
+            !emailFormControl.hasError('required')) {
+            <mat-error>Please enter a valid email address</mat-error>
+            } @if (emailFormControl.hasError('required')) {
+            <mat-error>Email is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+          <button mat-button color="primary">Primary</button>
+          <button mat-button color="accent">Accent</button>
+          <!-- add two buttons to switch theme from light to dark -->
+          <div class="example-button-row">
+            <button (click)="toggleTheme()">Toggle Theme</button>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </footer>

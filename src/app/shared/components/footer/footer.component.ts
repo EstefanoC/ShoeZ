@@ -1,30 +1,48 @@
 import { Component } from '@angular/core';
+import {
+  FormControl,
+  Validators,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 // Dependencies
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     RouterOutlet,
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
     MatCheckboxModule,
     MatGridListModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.sass',
 })
 export class FooterComponent {
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
   getTheme() {
     if (typeof document !== 'undefined') {
       return document.body.classList.contains('dark-theme');

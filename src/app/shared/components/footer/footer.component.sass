@@ -1,4 +1,64 @@
 footer
+  position: relative
   width: 100%
   height: auto
   min-height: 400px
+  padding: 2rem 0
+  .footer_background
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: center 70%
+    opacity: 0.15
+  .logo_footer
+    display: flex
+    flex-direction: column
+    gap: 2.5rem
+    align-items: start
+    justify-content: start
+    width: 100%
+    min-height: 205px
+    > a
+      object-fit: cover
+      max-width: 120px
+      max-height: 120px
+      border-radius: 15px
+      overflow: hidden
+      margin-right: auto
+      margin-bottom: -1.5rem
+      > img
+        width: 100%
+        height: 100%
+  .logo_contact
+    display: flex
+    flex-direction: column
+    gap: 2.5rem
+    min-height: 205px
+    > ul
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      width: 280px
+      padding: 0
+      > li
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 1.5rem
+        width: 100%
+        > p
+          margin: 0
+          margin-right: auto
+          > span
+  .email_footer
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    justify-content: flex-end
+    gap: 2.5rem
+    min-height: 205px
+    .email_footer_input
+      width: 250px
