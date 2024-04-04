@@ -6,6 +6,7 @@ import { LandingBannerComponent } from '../landing-banner/landing-banner.compone
 import { LandingTrendingComponent } from '../landing-trending/landing-trending.component';
 import { InstagramComponent } from '../../../shared/components/instagram/instagram.component';
 import { LandingCategoriesComponent } from '../landing-categories/landing-categories.component';
+import { BrandInfoComponent } from '../../../shared/components/brand-info/brand-info.component';
 import { LandingBestSellerComponent } from '../landing-best-seller/landing-best-seller.component';
 import { CustomerComponent } from '../../../shared/components/customer/customer-layout/customer.component';
 
@@ -15,6 +16,7 @@ import { CustomerComponent } from '../../../shared/components/customer/customer-
   imports: [
     CustomerComponent,
     InstagramComponent,
+    BrandInfoComponent,
     LandingFlashComponent,
     LandingBannerComponent,
     LandingTrendingComponent,
