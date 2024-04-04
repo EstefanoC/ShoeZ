@@ -1,0 +1,17 @@
+<div class="customer_carousel">
+  <ngx-slick-carousel
+    class="carouselCustomer"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+  >
+    @for (slide of slides; track slide) {
+    <article ngxSlickItem class="slide">
+      <h2 class="text_lg">{{ slide.title }}</h2>
+      <p class="text_base">{{ slide.content }}</p>
+      <div class="text_lg">
+        <p>{{ slide.name }} - From {{ slide.country }}</p>
+      </div>
+    </article>
+    }
+  </ngx-slick-carousel>
+</div>

@@ -5,6 +5,9 @@ import 'atropos/css/min';
 import Atropos from 'atropos';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
+// Core
+import { SlidesLanding } from '../../../../core/models/landing.interface';
+
 @Component({
   selector: 'app-banner',
   standalone: true,
@@ -14,7 +17,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   schemas: [],
 })
 export class BannerComponent implements AfterViewInit {
-  slides = [
+  slides: SlidesLanding[] = [
     {
       img: '../../../../assets/image/Landing_banner_1.webp',
       title: 'Air Blast',

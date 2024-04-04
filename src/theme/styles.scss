@@ -79,6 +79,13 @@ $dark-theme: mat.define-dark-theme(
 .bg_background {
   background-color: mat.get-color-from-palette($background);
 }
+.bg_background_gradient {
+  background: linear-gradient(
+    0deg,
+    mat.get-color-from-palette($background),
+    rgba(255, 255, 255, 0)
+  );
+}
 .bg_tertiary_before::before {
   background-color: mat.get-color-from-palette($tertiary);
 }
@@ -128,6 +135,13 @@ body.dark-theme {
   }
   .bg_background {
     background-color: mat.get-color-from-palette($dark-background);
+  }
+  .bg_background_gradient {
+    background: linear-gradient(
+      0deg,
+      mat.get-color-from-palette($dark-background),
+      rgba(255, 255, 255, 0)
+    );
   }
   .bg_tertiary_before::before {
     background-color: mat.get-color-from-palette($dark-tertiary);
