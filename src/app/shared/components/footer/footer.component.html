@@ -58,32 +58,49 @@
       <mat-grid-tile>
         <div class="email_footer">
           <h2 class="text_lg col_tertiary">NEWSLETTER</h2>
-          <p class="text_small col_tertiary">
-            Get 15% off your first purchase! Plus
-          </p>
-          <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input
-              type="email"
-              matInput
-              [formControl]="emailFormControl"
-              placeholder="Ex. pat@example.com"
-            />
-            @if (emailFormControl.hasError('email') &&
-            !emailFormControl.hasError('required')) {
-            <mat-error>Please enter a valid email address</mat-error>
-            } @if (emailFormControl.hasError('required')) {
-            <mat-error>Email is <strong>required</strong></mat-error>
-            }
-          </mat-form-field>
-          <button mat-button color="primary">Primary</button>
-          <button mat-button color="accent">Accent</button>
-          <!-- add two buttons to switch theme from light to dark -->
-          <div class="example-button-row">
-            <button (click)="toggleTheme()">Toggle Theme</button>
+          <div class="email_form">
+            <p class="text_small col_tertiary">
+              Get 15% off your first purchase! Plus
+            </p>
+
+            <!-- Input -->
+            <mat-form-field class="email_footer_input">
+              <mat-label>Email</mat-label>
+              <input
+                type="email"
+                matInput
+                [formControl]="emailFormControl"
+                placeholder="Ex. ShoeZ@gmail.com"
+              />
+              @if (emailFormControl.hasError('email') &&
+              !emailFormControl.hasError('required')) {
+              <mat-error>Please enter a valid email address</mat-error>
+              } @if (emailFormControl.hasError('required')) {
+              <mat-error>Email is <strong>required</strong></mat-error>
+              }
+
+              <button type="button" class="email_submit">
+                <mat-icon aria-label="Arrow">east</mat-icon>
+              </button>
+            </mat-form-field>
           </div>
         </div>
       </mat-grid-tile>
     </mat-grid-list>
   </div>
+
+  <mat-divider class="primary"></mat-divider>
+
+  <section class="footer_bottom container">
+    <small class="text_small col_tertiary"
+      >Copyright © 2023 ShoeZ. All rights reserved.</small
+    >
+
+    <!-- add two buttons to switch theme from light to dark -->
+    <div class="bg_tertiary rounded email_theme" (click)="toggleTheme()">
+      <mat-icon aria-label="Person">
+        {{ getTheme() ? "dark_mode" : "light_mode" }}
+      </mat-icon>
+    </div>
+  </section>
 </footer>

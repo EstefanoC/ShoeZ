@@ -11,11 +11,11 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule, RouterOutlet } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-footer',

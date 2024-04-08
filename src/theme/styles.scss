@@ -114,6 +114,9 @@ $dark-theme: mat.define-dark-theme(
 .col_background {
   color: mat.get-color-from-palette($tertiary);
 }
+.mat-divider.primary {
+  border-top-color: mat.get-color-from-palette($primary);
+}
 
 @include mat.all-component-themes($light-theme);
 
@@ -170,6 +173,9 @@ body.dark-theme {
   }
   .col_background {
     color: mat.get-color-from-palette($dark-tertiary);
+  }
+  .mat-divider.primary {
+    border-top-color: mat.get-color-from-palette($dark-primary);
   }
 }
 

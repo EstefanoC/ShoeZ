@@ -20,7 +20,7 @@ footer
     align-items: start
     justify-content: start
     width: 100%
-    min-height: 205px
+    min-height: 250px
     > a
       object-fit: cover
       max-width: 120px
@@ -36,11 +36,13 @@ footer
     display: flex
     flex-direction: column
     gap: 2.5rem
-    min-height: 205px
+    min-height: 250px
     > ul
+      display: flex
       flex-direction: column
       align-items: center
       justify-content: center
+      gap: 1.5rem
       width: 280px
       padding: 0
       > li
@@ -57,8 +59,32 @@ footer
     display: flex
     flex-direction: column
     align-items: flex-end
-    justify-content: flex-end
+    justify-content: flex-start
     gap: 2.5rem
-    min-height: 205px
+    min-height: 250px
+    .email_form
+      display: flex
+      flex-direction: column
+      gap: 1rem
+      align-items: flex-end
     .email_footer_input
       width: 250px
+      .mat-input-element
+        border-radius: 100px!important
+      .email_submit
+        position: absolute
+        top: 0
+        right: -16px
+        border: 0
+        outline: none
+        background: none
+        height: 100%
+        cursor: pointer
+  .footer_bottom
+    display: flex
+    gap: 2.5rem
+    align-items: center
+    justify-content: space-between
+    padding: 1rem 2rem
+    padding-bottom: 0
+    .email_theme
