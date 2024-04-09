@@ -57,7 +57,7 @@ import {
         })
       ),
       state(
-        'kids',
+        'unisex',
         style({
           transform: 'translateY(calc(-50% + 5px)) translateX(15rem)',
         })

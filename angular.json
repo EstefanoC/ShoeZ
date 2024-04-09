@@ -25,11 +25,11 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/theme/styles.scss",
-              "src/theme/normalize.css",
-              "node_modules/slick-carousel/slick/slick.scss",
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "node_modules/slick-carousel/slick/slick-theme.scss",
-              "@angular/material/prebuilt-themes/deeppurple-amber.css"
+              "node_modules/slick-carousel/slick/slick.scss",
+              "src/theme/normalize.css",
+              "src/theme/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -92,11 +92,11 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/theme/styles.scss",
-              "src/theme/normalize.css",
-              "node_modules/slick-carousel/slick/slick.scss",
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "node_modules/slick-carousel/slick/slick-theme.scss",
-              "@angular/material/prebuilt-themes/deeppurple-amber.css"
+              "node_modules/slick-carousel/slick/slick.scss",
+              "src/theme/normalize.css",
+              "src/theme/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

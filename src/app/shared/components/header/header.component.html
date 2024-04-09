@@ -17,56 +17,56 @@
     <!-- Phone -->
     <mat-grid-tile>
       <div class="phone mat-typography">
-        <div class="bg_tertiary rounded">
-          <mat-icon color="accent" aria-label="Phone">phone_in_talk</mat-icon>
+        <div class="bg_secondary rounded">
+          <mat-icon color="primary" aria-label="Phone">phone_in_talk</mat-icon>
         </div>
         <p class="text_base">
           Call Us :
-          <a href="tel:0123-456-7890" class="col_secondary">0123-456-7890</a>
+          <a href="tel:0123-456-7890" class="col_warn">0123-456-7890</a>
         </p>
       </div>
     </mat-grid-tile>
 
     <!-- Icons -->
     <mat-grid-tile>
-      <div class="icons">
+      <ul class="icons">
         <!-- add two buttons to switch theme from light to dark -->
-        <div class="bg_tertiary rounded" (click)="toggleTheme()">
+        <li class="bg_secondary col_background rounded" (click)="toggleTheme()">
           <mat-icon aria-label="Person">
             {{ getTheme() ? "dark_mode" : "light_mode" }}
           </mat-icon>
-        </div>
-        <div class="bg_tertiary rounded">
+        </li>
+        <li class="bg_secondary col_background rounded">
           <mat-icon
             aria-label="Person"
             aria-hidden="false"
             matBadge="1"
-            matBadgeColor="accent"
+            matBadgeColor="primary"
           >
             person
           </mat-icon>
-        </div>
-        <div class="bg_tertiary rounded">
+        </li>
+        <li class="bg_secondary col_background rounded">
           <mat-icon
             aria-label="Favorite"
             aria-hidden="false"
             matBadge="1"
-            matBadgeColor="accent"
+            matBadgeColor="primary"
           >
             favorite
           </mat-icon>
-        </div>
-        <div class="bg_tertiary rounded">
+        </li>
+        <li class="bg_secondary col_background rounded">
           <mat-icon
             aria-label="Cart"
             aria-hidden="false"
             matBadge="1"
-            matBadgeColor="accent"
+            matBadgeColor="primary"
           >
             shopping_cart
           </mat-icon>
-        </div>
-      </div>
+        </li>
+      </ul>
     </mat-grid-tile>
 
     <!-- Navbar -->
@@ -80,10 +80,10 @@
             <a [routerLink]="['/shop?men']" class="col_tertiary">Men</a>
           </li>
           <li>
-            <a [routerLink]="['/shop?women']" class="col_tertiary">Men</a>
+            <a [routerLink]="['/shop?women']" class="col_tertiary">Women</a>
           </li>
           <li>
-            <a [routerLink]="['/shop?unisex']" class="col_tertiary">Men</a>
+            <a [routerLink]="['/shop?unisex']" class="col_tertiary">Unisex</a>
           </li>
         </ul>
 

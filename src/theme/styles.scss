@@ -2,8 +2,9 @@
 
 $mat-primary-scheme: (
   100: #54c7d1,
-  500: #5f999e,
-  700: #56696b,
+  200: #fafeff,
+  500: #56696bb3,
+  700: #5f999e,
   800: #eefdff,
   900: #1e1e1e,
   contrast: (
@@ -15,7 +16,8 @@ $mat-primary-scheme: (
 
 $mat-dark-scheme: (
   100: #0e2021,
-  500: #335354,
+  200: #040909,
+  500: #54c7d181,
   700: #6d8687,
   800: #25292a,
   900: #b4e6e9,
@@ -27,6 +29,7 @@ $mat-dark-scheme: (
 );
 
 $primary: mat.define-palette($mat-primary-scheme, 100);
+$white: mat.define-palette($mat-primary-scheme, 200);
 $accent: mat.define-palette($mat-primary-scheme, 500);
 $warn: mat.define-palette($mat-primary-scheme, 700);
 $tertiary: mat.define-palette($mat-primary-scheme, 800);
@@ -36,6 +39,7 @@ $light-theme: mat.define-light-theme(
   (
     color: (
       primary: $primary,
+      back: $white,
       accent: $accent,
       warn: $warn,
       tertiary: $tertiary,
@@ -46,6 +50,7 @@ $light-theme: mat.define-light-theme(
 
 // define the dark theme palettes
 $dark-primary: mat.define-palette($mat-dark-scheme, 100);
+$dark-white: mat.define-palette($mat-dark-scheme, 200);
 $dark-accent: mat.define-palette($mat-dark-scheme, 500);
 $dark-warn: mat.define-palette($mat-dark-scheme, 700);
 $dark-tertiary: mat.define-palette($mat-dark-scheme, 800);
@@ -55,6 +60,7 @@ $dark-theme: mat.define-dark-theme(
   (
     color: (
       primary: $dark-primary,
+      back: $dark-white,
       accent: $dark-accent,
       warn: $dark-warn,
       tertiary: $dark-tertiary,
@@ -66,6 +72,9 @@ $dark-theme: mat.define-dark-theme(
 // Var to use in light theme
 .bg_primary {
   background-color: mat.get-color-from-palette($primary);
+}
+.bg_white {
+  background-color: mat.get-color-from-palette($white);
 }
 .bg_secondary {
   background-color: mat.get-color-from-palette($accent);
@@ -79,12 +88,29 @@ $dark-theme: mat.define-dark-theme(
 .bg_background {
   background-color: mat.get-color-from-palette($background);
 }
+.bg_white_gradient {
+  background: linear-gradient(
+    0deg,
+    mat.get-color-from-palette($white),
+    rgba(255, 255, 255, 0)
+  );
+}
 .bg_background_gradient {
   background: linear-gradient(
     0deg,
     mat.get-color-from-palette($background),
     rgba(255, 255, 255, 0)
   );
+}
+.bg_tertiary_gradient_top {
+  background: linear-gradient(
+    0deg,
+    mat.get-color-from-palette($tertiary),
+    rgba(255, 255, 255, 0)
+  );
+}
+.bg_primary_before::before {
+  background-color: mat.get-color-from-palette($primary);
 }
 .bg_tertiary_before::before {
   background-color: mat.get-color-from-palette($tertiary);
@@ -112,10 +138,29 @@ $dark-theme: mat.define-dark-theme(
   color: mat.get-color-from-palette($tertiary);
 }
 .col_background {
-  color: mat.get-color-from-palette($tertiary);
+  color: mat.get-color-from-palette($background);
 }
 .mat-divider.primary {
   border-top-color: mat.get-color-from-palette($primary);
+}
+.slick-single_carousel .slick-next::before,
+.slick-single_carousel .slick-prev::before {
+  color: mat.get-color-from-palette($accent);
+}
+.carouselCustomer .slick-dots > li.slick-active > button::before,
+.carouselCustomer .slick-dots > li.slick-active > button:hover::before {
+  color: mat.get-color-from-palette($primary);
+  background: radial-gradient(
+    circle,
+    mat.get-color-from-palette($warn) 5%,
+    rgba(201, 172, 8, 0) 60%
+  );
+}
+.carouselCustomer .slick-dots > li > button::before {
+  color: mat.get-color-from-palette($accent);
+}
+.carouselCustomer .slick-dots > li > button:hover::before {
+  color: mat.get-color-from-palette($warn);
 }
 
 @include mat.all-component-themes($light-theme);
@@ -126,6 +171,9 @@ body.dark-theme {
 
   .bg_primary {
     background-color: mat.get-color-from-palette($dark-primary);
+  }
+  .bg_white {
+    background-color: mat.get-color-from-palette($dark-white);
   }
   .bg_secondary {
     background-color: mat.get-color-from-palette($dark-accent);
@@ -139,12 +187,22 @@ body.dark-theme {
   .bg_background {
     background-color: mat.get-color-from-palette($dark-background);
   }
+  .bg_white_gradient {
+    background: linear-gradient(
+      0deg,
+      mat.get-color-from-palette($dark-white),
+      rgba(255, 255, 255, 0)
+    );
+  }
   .bg_background_gradient {
     background: linear-gradient(
       0deg,
       mat.get-color-from-palette($dark-background),
       rgba(255, 255, 255, 0)
     );
+  }
+  .bg_primary_before::before {
+    background-color: mat.get-color-from-palette($dark-primary);
   }
   .bg_tertiary_before::before {
     background-color: mat.get-color-from-palette($dark-tertiary);
@@ -172,10 +230,25 @@ body.dark-theme {
     color: mat.get-color-from-palette($dark-tertiary);
   }
   .col_background {
-    color: mat.get-color-from-palette($dark-tertiary);
+    color: mat.get-color-from-palette($dark-background);
   }
   .mat-divider.primary {
     border-top-color: mat.get-color-from-palette($dark-primary);
+  }
+  .carouselCustomer .slick-dots > li.slick-active > button::before,
+  .carouselCustomer .slick-dots > li.slick-active > button:hover::before {
+    color: mat.get-color-from-palette($dark-primary);
+    background: radial-gradient(
+      circle,
+      mat.get-color-from-palette($dark-warn) 5%,
+      rgba(201, 172, 8, 0) 60%
+    );
+  }
+  .carouselCustomer .slick-dots > li > button::before {
+    color: mat.get-color-from-palette($dark-accent);
+  }
+  .carouselCustomer .slick-dots > li > button:hover::before {
+    color: mat.get-color-from-palette($dark-warn);
   }
 }
 

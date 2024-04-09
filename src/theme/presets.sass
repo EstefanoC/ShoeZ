@@ -78,6 +78,14 @@
   75%
     transform: scale(0.95, 1.05)
 
+@keyframes grow
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)
+
 
 .rounded
   position: relative
@@ -97,6 +105,31 @@
     overflow: visible
   .slick-prev, .slick-next
     display: none!important
+
+.slick-single_carousel .slick-prev,
+.slick-single_carousel .slick-next
+  height: 32px
+  width: 32px
+  &::before
+    font-size: 32px
+
+.slick-single_carousel .slick-prev
+  left: -3.5rem
+
+.slick-single_carousel .slick-next
+  right: -3.5rem
+
+.carouselCustomer .slick-dots > li,
+.carouselCustomer .slick-dots > li > button,
+.carouselCustomer .slick-dots > li > button::before
+  height: 32px
+  width: 32px
+  font-size: 18px
+  line-height: 32px
+
+.carouselCustomer .slick-dots > li > button::before
+  top: 50%
+  transform: translateY(-50%)
 
 // Container
 .container

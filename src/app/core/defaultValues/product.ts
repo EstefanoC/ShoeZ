@@ -27,5 +27,5 @@ export const ProductAdsDefault: ProductsAds = {
 export const ProductCategoriesDefault: ProductCategories[] = [
   'men',
   'women',
-  'kids',
+  'unisex',
 ];

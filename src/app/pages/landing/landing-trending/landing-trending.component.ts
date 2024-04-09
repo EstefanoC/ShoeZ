@@ -12,7 +12,6 @@ import {
   ProductCard,
   ProductsAds,
 } from '../../../core/models/product.interface';
-import { ProductAdsDefault } from '../../../core/defaultValues/product';
 
 @Component({
   selector: 'app-landing-trending',
@@ -58,8 +57,6 @@ export class LandingTrendingComponent {
   };
   slideConfig2 = {
     ...this.slideConfigGlobal,
-    prevArrow: '.image-feedback .prev-arrow',
-    nextArrow: '.image-feedback .next-arrow',
     asNavFor: '.slick-image_carousel',
   };
 
