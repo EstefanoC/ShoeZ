@@ -1,5 +1,5 @@
 <!-- Header -->
-<app-header />
+<app-header [headerShow]="this.showHeader" />
 
 <!-- Content Main -->
 <main>
@@ -7,7 +7,7 @@
 </main>
 
 <!-- Listener to Button Scroll -->
-<app-scroll-up />
+<app-scroll-up (isHeaderShow)="this.showHeader = $event" />
 
 <!-- Footer -->
 <app-footer />

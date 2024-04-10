@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import {
   animate,
   state,
@@ -27,7 +27,6 @@ import { MatButtonModule } from '@angular/material/button';
       state(
         'hidden',
         style({
-          opacity: 0,
           transform: 'translateY(5rem)',
         })
       ),
@@ -41,21 +40,27 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class ScrollUpComponent {
   isMenuScrolled = false;
-  isSidebarShowing = false;
+  // @Output() isSidebarShowing = false;
+  @Output() isHeaderShow = new EventEmitter<boolean>();
 
   @HostListener('window:scroll', ['$event'])
   scrollCheck() {
+    // Button to Scroll Top
     if (window.pageYOffset > 1250) this.isMenuScrolled = true;
     else this.isMenuScrolled = false;
+
+    // Show Header
+    if (window.pageYOffset > 500) this.isHeaderShow.emit(true);
+    else this.isHeaderShow.emit(false);
   }
 
-  openSideBar() {
-    this.isSidebarShowing = true;
-  }
+  // openSideBar() {
+  //   this.isSidebarShowing = true;
+  // }
 
-  closeSideBar() {
-    this.isSidebarShowing = false;
-  }
+  // closeSideBar() {
+  //   this.isSidebarShowing = false;
+  // }
 
   scrollToTop() {
     document.body.scrollIntoView({ behavior: 'smooth' });

@@ -18,7 +18,9 @@
     <mat-grid-tile>
       <div class="phone mat-typography">
         <div class="bg_secondary rounded">
-          <mat-icon color="primary" aria-label="Phone">phone_in_talk</mat-icon>
+          <mat-icon class="col_white" aria-label="Phone"
+            >phone_in_talk</mat-icon
+          >
         </div>
         <p class="text_base">
           Call Us :
@@ -31,12 +33,12 @@
     <mat-grid-tile>
       <ul class="icons">
         <!-- add two buttons to switch theme from light to dark -->
-        <li class="bg_secondary col_background rounded" (click)="toggleTheme()">
+        <li class="bg_secondary col_white rounded" (click)="toggleTheme()">
           <mat-icon aria-label="Person">
             {{ getTheme() ? "dark_mode" : "light_mode" }}
           </mat-icon>
         </li>
-        <li class="bg_secondary col_background rounded">
+        <li class="bg_secondary col_white rounded">
           <mat-icon
             aria-label="Person"
             aria-hidden="false"
@@ -46,7 +48,7 @@
             person
           </mat-icon>
         </li>
-        <li class="bg_secondary col_background rounded">
+        <li class="bg_secondary col_white rounded">
           <mat-icon
             aria-label="Favorite"
             aria-hidden="false"
@@ -56,7 +58,7 @@
             favorite
           </mat-icon>
         </li>
-        <li class="bg_secondary col_background rounded">
+        <li class="bg_secondary col_white rounded">
           <mat-icon
             aria-label="Cart"
             aria-hidden="false"
@@ -92,4 +94,32 @@
       </div>
     </mat-grid-tile>
   </mat-grid-list>
+
+  <!-- Navbar fixed -->
+  <div
+    class="bg_secondary navbar_fixed text_base {{
+      headerShow ? 'show' : 'hidden'
+    }}"
+    [@showHeader]="this.headerShow ? 'show' : 'hidden'"
+  >
+    <div class="container">
+      <ul>
+        <li>
+          <a [routerLink]="['/shop']" class="col_tertiary">All Shoes</a>
+        </li>
+        <li>
+          <a [routerLink]="['/shop?men']" class="col_tertiary">Men</a>
+        </li>
+        <li>
+          <a [routerLink]="['/shop?women']" class="col_tertiary">Women</a>
+        </li>
+        <li>
+          <a [routerLink]="['/shop?unisex']" class="col_tertiary">Unisex</a>
+        </li>
+      </ul>
+
+      <!-- Search -->
+      <app-search />
+    </div>
+  </div>
 </header>

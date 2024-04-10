@@ -15,4 +15,5 @@ import { ScrollUpComponent } from './shared/components/scroll-up/scroll-up.compo
 })
 export class AppComponent {
   title = 'ShoeZ';
+  showHeader = false;
 }

@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 // Dependencies
 import { CommonModule } from '@angular/common';
@@ -16,6 +23,26 @@ import { SearchComponent } from '../search/search.component';
 @Component({
   selector: 'app-header',
   standalone: true,
+  animations: [
+    trigger('showHeader', [
+      state(
+        'show',
+        style({
+          opacity: 1,
+          top: '0',
+        })
+      ),
+      state(
+        'hidden',
+        style({
+          opacity: 0,
+          top: '-6rem',
+        })
+      ),
+      transition('show => hidden', [animate('0.5s')]),
+      transition('hidden => show', [animate('0.5s')]),
+    ]),
+  ],
   imports: [
     CommonModule,
     RouterOutlet,
@@ -33,6 +60,7 @@ import { SearchComponent } from '../search/search.component';
 })
 export class HeaderComponent {
   search = '';
+  @Input() headerShow = false;
 
   // Get theme Dark or Light
   getTheme() {
