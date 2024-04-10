@@ -259,9 +259,12 @@ body.dark-theme {
 
 html,
 body {
-  overflow-x: hidden;
+  scroll-behavior: smooth;
   height: 100%;
   margin: 0;
+}
+body {
+  overflow-x: hidden;
 }
 
 // Import Presets

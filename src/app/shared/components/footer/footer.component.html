@@ -96,11 +96,14 @@
       >Copyright © 2023 ShoeZ. All rights reserved.</small
     >
 
-    <!-- add two buttons to switch theme from light to dark -->
-    <div class="bg_tertiary rounded email_theme" (click)="toggleTheme()">
-      <mat-icon aria-label="Person">
-        {{ getTheme() ? "dark_mode" : "light_mode" }}
-      </mat-icon>
-    </div>
+    <!-- Buttons -->
+    <ul class="icons">
+      <!-- add two buttons to switch theme from light to dark -->
+      <li class="bg_tertiary rounded email_theme" (click)="toggleTheme()">
+        <mat-icon aria-label="Person">
+          {{ getTheme() ? "dark_mode" : "light_mode" }}
+        </mat-icon>
+      </li>
+    </ul>
   </section>
 </footer>

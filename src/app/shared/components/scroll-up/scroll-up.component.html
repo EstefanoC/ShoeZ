@@ -1,0 +1,9 @@
+<button
+  mat-fab
+  color="tertiary"
+  (click)="scrollToTop()"
+  class="button_scrollUp rounded"
+  [@showScroll]="this.isMenuScrolled ? 'show' : 'hidden'"
+>
+  <mat-icon aria-label="arrow"> north </mat-icon>
+</button>
