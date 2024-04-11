@@ -22,7 +22,7 @@
             >phone_in_talk</mat-icon
           >
         </div>
-        <p class="text_base">
+        <p class="text_base col_background">
           Call Us :
           <a href="tel:0123-456-7890" class="col_warn">0123-456-7890</a>
         </p>
@@ -103,7 +103,7 @@
     [@showHeader]="this.headerShow ? 'show' : 'hidden'"
   >
     <div class="container">
-      <ul>
+      <ul class="nav">
         <li>
           <a [routerLink]="['/shop']" class="col_tertiary">All Shoes</a>
         </li>
@@ -120,6 +120,46 @@
 
       <!-- Search -->
       <app-search />
+
+      <!-- Icons -->
+      <ul class="icons">
+        <!-- add two buttons to switch theme from light to dark -->
+        <li class="bg_secondary col_white rounded" (click)="toggleTheme()">
+          <mat-icon aria-label="Person">
+            {{ getTheme() ? "dark_mode" : "light_mode" }}
+          </mat-icon>
+        </li>
+        <li class="bg_secondary col_white rounded">
+          <mat-icon
+            aria-label="Person"
+            aria-hidden="false"
+            matBadge="1"
+            matBadgeColor="primary"
+          >
+            person
+          </mat-icon>
+        </li>
+        <li class="bg_secondary col_white rounded">
+          <mat-icon
+            aria-label="Favorite"
+            aria-hidden="false"
+            matBadge="1"
+            matBadgeColor="primary"
+          >
+            favorite
+          </mat-icon>
+        </li>
+        <li class="bg_secondary col_white rounded">
+          <mat-icon
+            aria-label="Cart"
+            aria-hidden="false"
+            matBadge="1"
+            matBadgeColor="primary"
+          >
+            shopping_cart
+          </mat-icon>
+        </li>
+      </ul>
     </div>
   </div>
 </header>

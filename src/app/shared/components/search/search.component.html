@@ -1,17 +1,21 @@
 <div class="search bg_tertiary">
   <label>
-    <mat-icon aria-label="Search" (click)="this.search = ''">
+    <mat-icon
+      aria-label="Search"
+      (click)="this.search = ''"
+      class="col_background"
+    >
       {{ search.length > 0 ? "close" : "search" }}
     </mat-icon>
     <input
       type="text"
       placeholder="search"
-      class="bg_tertiary"
+      class="bg_tertiary col_background"
       (input)="onChangeSearch($event)"
       [value]="this.search"
     />
   </label>
-  <button type="button">
+  <button type="button" class="col_background">
     <mat-icon aria-label="Arrow">east</mat-icon>
   </button>
 </div>

@@ -69,6 +69,7 @@
               <input
                 type="email"
                 matInput
+                color="background"
                 [formControl]="emailFormControl"
                 placeholder="Ex. ShoeZ@gmail.com"
               />
@@ -79,7 +80,7 @@
               <mat-error>Email is <strong>required</strong></mat-error>
               }
 
-              <button type="button" class="email_submit">
+              <button type="button" class="email_submit col_background">
                 <mat-icon aria-label="Arrow">east</mat-icon>
               </button>
             </mat-form-field>
@@ -99,7 +100,10 @@
     <!-- Buttons -->
     <ul class="icons">
       <!-- add two buttons to switch theme from light to dark -->
-      <li class="bg_tertiary rounded email_theme" (click)="toggleTheme()">
+      <li
+        class="bg_secondary col_white rounded email_theme"
+        (click)="toggleTheme()"
+      >
         <mat-icon aria-label="Person">
           {{ getTheme() ? "dark_mode" : "light_mode" }}
         </mat-icon>

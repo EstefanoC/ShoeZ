@@ -15,12 +15,12 @@ $mat-primary-scheme: (
 );
 
 $mat-dark-scheme: (
-  100: #0e2021,
-  200: #040909,
-  500: #54c7d181,
-  700: #6d8687,
-  800: #25292a,
-  900: #b4e6e9,
+  100: #0d8f96,
+  200: #042626,
+  500: #5fc5cfc7,
+  700: #8ba2a2,
+  800: #021818,
+  900: #67afb3,
   contrast: (
     100: #b4e6e9,
     500: #93b8ba,
@@ -201,6 +201,13 @@ body.dark-theme {
     background: linear-gradient(
       0deg,
       mat.get-color-from-palette($dark-background),
+      rgba(255, 255, 255, 0)
+    );
+  }
+  .bg_tertiary_gradient_top {
+    background: linear-gradient(
+      0deg,
+      mat.get-color-from-palette($dark-warn),
       rgba(255, 255, 255, 0)
     );
   }
