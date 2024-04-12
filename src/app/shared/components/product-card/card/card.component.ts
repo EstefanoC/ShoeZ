@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 // Dependencies
 import { MatIconModule } from '@angular/material/icon';
@@ -21,7 +22,13 @@ import { ReviewComponent } from '../review/review.component';
 export class CardComponent {
   @Input() data: ProductCard = ProductCardDefault;
 
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
     this.data = { ...this.data };
+  }
+
+  handleClick(id: string) {
+    this.router.navigate(['/product', id]);
   }
 }

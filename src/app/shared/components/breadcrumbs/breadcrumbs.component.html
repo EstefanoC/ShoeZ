@@ -1,0 +1,26 @@
+<ol class="breadcrumb">
+  <li
+    class="col_background text_base"
+    *ngFor="let item of routes; let i = index"
+    [class.active]="i === routes.length - 1"
+  >
+    <!-- Print link if has different route -->
+    <a
+      [routerLink]="setRouter(item)"
+      *ngIf="i !== routes.length - 1"
+      class="col_warn"
+    >
+      {{ item }}
+    </a>
+
+    <!-- Print Icon in right side -->
+    <mat-icon color="primary" class="text-base" *ngIf="i !== routes.length - 1">
+      arrow_forward_ios
+    </mat-icon>
+
+    <!-- Print label if the route is same -->
+    <span *ngIf="i === routes.length - 1" class="col_secondary">
+      {{ currentRoute ? currentRoute : item }}
+    </span>
+  </li>
+</ol>

@@ -33,6 +33,7 @@ export class LandingFlashComponent {
   slideShow: number = 3;
   slides: ProductCard[] = [
     {
+      id: 'jordan11retrolowie',
       img: '../../../../assets/image/products/Jordan 11 Retro Low IE White Gym Red.avif',
       title: 'Jordan 11 Retro Low IE White Gym Red',
       price: 155,
@@ -40,6 +41,7 @@ export class LandingFlashComponent {
       review: 4.5,
     },
     {
+      id: 'jordan11retrolow',
       img: '../../../../assets/image/products/Jordan 11 Retro Low Midnight Navy.avif',
       title: 'Jordan 11 Retro Low Midnight Navy',
       price: 125,
@@ -47,6 +49,7 @@ export class LandingFlashComponent {
       review: 4,
     },
     {
+      id: 'jordanretrotint11',
       img: '../../../../assets/image/products/Jordan 11 Retro Platinum Tint.avif',
       title: 'Jordan 11 Retro Platinum Tint',
       price: 455,
@@ -54,6 +57,7 @@ export class LandingFlashComponent {
       review: 5,
     },
     {
+      id: 'jordanretro11111',
       img: '../../../../assets/image/products/Jordan 11 Retro Pantone.avif',
       title: 'Jordan 11 Retro Pantone',
       price: 287,
@@ -61,6 +65,7 @@ export class LandingFlashComponent {
       review: 3.5,
     },
     {
+      id: 'nikeairmax865',
       img: "../../../../assets/image/products/Nike Air Max 1 '86 OG Big Bubble Air Max Day (2024).avif",
       title: "Nike Air Max 1 '86 OG Big Bubble Air Max Day (2024)",
       price: 805,
@@ -68,6 +73,7 @@ export class LandingFlashComponent {
       review: 5,
     },
     {
+      id: 'nikeairvapormax3600',
       img: '../../../../assets/image/products/Nike Air VaporMax 360.avif',
       title: 'Nike Air VaporMax 360',
       price: 85,
@@ -75,6 +81,7 @@ export class LandingFlashComponent {
       review: 2.5,
     },
     {
+      id: 'nikelebron4fruity',
       img: '../../../../assets/image/products/Nike LeBron 4 Fruity Pebbles (2024).avif',
       title: 'Nike LeBron 4 Fruity Pebbles (2024)',
       price: 950,
@@ -82,6 +89,7 @@ export class LandingFlashComponent {
       review: 0.5,
     },
     {
+      id: 'nikeairvapormax3600011',
       img: '../../../../assets/image/products/Nike_Air_VaporMax_360.avif',
       title: 'Nike_Air_VaporMax_360',
       price: 198,
@@ -89,6 +97,7 @@ export class LandingFlashComponent {
       review: 4.5,
     },
     {
+      id: 'puma suedeeeeee',
       img: '../../../../assets/image/products/Puma Suede One Piece Straw Hat Luffy.avif',
       title: 'Puma Suede One Piece Straw Hat Luffy',
       price: 89,
