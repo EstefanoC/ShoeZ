@@ -1,6 +1,18 @@
-<div class="container">
+<div class="container single_product">
   <!-- breadcrumb -->
   <app-breadcrumbs [currentRoute]="data.title" />
+
+  <section class="top_row">
+    <mat-grid-list cols="2" rowHeight="2:2">
+      <!-- Print images -->
+      <mat-grid-tile>
+        <app-image360 [imageData]="data.images" />
+      </mat-grid-tile>
+      <mat-grid-tile>2</mat-grid-tile>
+      <mat-grid-tile>3</mat-grid-tile>
+      <mat-grid-tile>4</mat-grid-tile>
+    </mat-grid-list>
+  </section>
 
   <p>single-product-layout works! {{ product }}</p>
 </div>
