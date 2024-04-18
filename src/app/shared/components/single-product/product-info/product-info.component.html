@@ -1,0 +1,181 @@
+<section class="product_info">
+  <!-- List Price -->
+  <div class="list">
+    <h3 class="text_lg icon_text">
+      <mat-icon
+        aria-label="payments"
+        color="primary"
+        aria-hidden="false"
+        class="icon"
+      >
+        payments
+      </mat-icon>
+      Price:
+    </h3>
+
+    <!-- Print Price -->
+    <div class="row">
+      <app-price
+        [price]="data.price"
+        [discount]="data.discount"
+        [size]="true"
+      />
+
+      <!-- Discount Tag -->
+      @if (data.discount) {
+      <span class="discount bg_primary text_small">
+        <mat-icon
+          aria-label="bolt"
+          color="tertiary"
+          aria-hidden="false"
+          class="icon"
+        >
+          bolt
+        </mat-icon>
+        {{ data.discount }}%
+      </span>
+      }
+    </div>
+  </div>
+
+  <!-- List Review and favorite -->
+  <div class="list">
+    <h3 class="text_lg icon_text">
+      <mat-icon
+        aria-label="reviews"
+        color="primary"
+        aria-hidden="false"
+        class="icon"
+      >
+        reviews
+      </mat-icon>
+      Review:
+    </h3>
+
+    <div class="row">
+      <!-- Review -->
+      <app-review [review]="data.review" />
+
+      <!-- Favorite Icon -->
+      <div class="bg_secondary col_white rounded">
+        <mat-icon
+          aria-label="Favorite"
+          aria-hidden="false"
+          matBadge="1"
+          matBadgeColor="primary"
+        >
+          favorite
+        </mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- List Short Description -->
+  <div class="list">
+    <h3 class="text_lg icon_text">
+      <mat-icon
+        aria-label="description"
+        color="primary"
+        aria-hidden="false"
+        class="icon"
+      >
+        description
+      </mat-icon>
+      Description Short:
+    </h3>
+
+    <p class="text_base col_background">{{ data.description_short }}</p>
+  </div>
+
+  <!-- List Size -->
+  <div>
+    <h3 class="text_lg icon_text">
+      <mat-icon
+        aria-label="unfold_more"
+        color="primary"
+        aria-hidden="false"
+        class="icon"
+      >
+        unfold_more
+      </mat-icon>
+      Size: {{ currentlySize }}
+    </h3>
+
+    <!-- Loop Size -->
+    <mat-grid-list cols="6" rowHeight="3:1" gutterSize="0.5rem">
+      @for (size of data.size; track data.size) {
+      <mat-grid-tile>
+        <div
+          class="size_item"
+          [ngClass]="{ 'bg_primary col_white': this.currentlySize === size }"
+          (click)="this.currentlySize = size"
+        >
+          <h2 class="text_base col_background">{{ size }}</h2>
+        </div>
+      </mat-grid-tile>
+      }
+    </mat-grid-list>
+  </div>
+
+  <!-- List Quantity -->
+  <div class="list">
+    <h3 class="text_lg icon_text">
+      <mat-icon
+        aria-label="dataset"
+        color="primary"
+        aria-hidden="false"
+        class="icon"
+      >
+        dataset </mat-icon
+      >Quantity:
+    </h3>
+
+    <mat-form-field class="input_quantity">
+      <input
+        matInput
+        placeholder="1"
+        (input)="handleChangeQuantity($event)"
+        [(ngModel)]="quantity"
+      />
+
+      <span matTextPrefix>
+        <button
+          mat-icon-button
+          aria-label="expand_more"
+          [disabled]="this.quantity <= 1"
+          (click)="this.quantity = this.quantity - 1"
+        >
+          <mat-icon>expand_more</mat-icon>
+        </button>
+      </span>
+
+      <span matTextSuffix>
+        <button
+          mat-icon-button
+          aria-label="expand_less"
+          [disabled]="this.quantity >= 100"
+          (click)="this.quantity = this.quantity + 1"
+        >
+          <mat-icon>expand_less</mat-icon>
+        </button>
+      </span>
+    </mat-form-field>
+  </div>
+
+  <!-- Add Cart -->
+  <div class="list">
+    <button
+      class="button"
+      mat-flat-button
+      color="primary"
+      id="next-button-flash"
+      aria-label="go to shop"
+      (click)="this.addCard()"
+      disabled="{{
+        this.quantity > 0 && this.quantity <= 100 && !!this.currentlySize
+      }}"
+    >
+      View All
+    </button>
+  </div>
+</section>

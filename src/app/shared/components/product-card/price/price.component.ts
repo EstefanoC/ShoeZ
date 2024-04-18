@@ -16,6 +16,7 @@ import { ProductCard } from '../../../../core/models/product.interface';
 export class PriceComponent {
   @Input() price: ProductCard['price'] = 0;
   @Input() discount: ProductCard['discount'] = 0;
+  @Input() size: boolean = false;
   typeof: any;
 
   // Calculate discount and final price

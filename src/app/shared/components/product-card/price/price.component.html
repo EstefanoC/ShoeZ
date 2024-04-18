@@ -1,4 +1,4 @@
-<span class="text_base col_background price">
+<span class="text_base col_background price" [ngClass]="{ text_xl: size }">
   ${{ calculatePrice(price, discount) }}
 
   <!-- Print old price -->

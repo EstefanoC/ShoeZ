@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 // Dependencies
 import { MatIconModule } from '@angular/material/icon';
@@ -13,6 +13,7 @@ import { Review, ReviewStar } from '../../../../core/models/review.interface';
   imports: [MatIconModule, MatButtonModule],
   templateUrl: './review.component.html',
   styleUrl: './review.component.sass',
+  encapsulation: ViewEncapsulation.None,
 })
 export class ReviewComponent {
   @Input() review: Review = 0;

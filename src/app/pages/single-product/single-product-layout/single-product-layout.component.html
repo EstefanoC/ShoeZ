@@ -3,12 +3,18 @@
   <app-breadcrumbs [currentRoute]="data.title" />
 
   <section class="top_row">
+    <!-- Title -->
+    <h1 class="top_title text_xl">{{ data.title }}</h1>
+
+    <!-- List to show -->
     <mat-grid-list cols="2" rowHeight="2:2">
       <!-- Print images -->
       <mat-grid-tile>
-        <app-image360 [imageData]="data.images" />
+        <app-image360 [imageData]="data.images" style="margin-right: auto" />
       </mat-grid-tile>
-      <mat-grid-tile>2</mat-grid-tile>
+      <mat-grid-tile>
+        <app-product-info [data]="data" style="height: 100%" />
+      </mat-grid-tile>
       <mat-grid-tile>3</mat-grid-tile>
       <mat-grid-tile>4</mat-grid-tile>
     </mat-grid-list>
