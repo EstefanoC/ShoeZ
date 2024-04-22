@@ -57,7 +57,7 @@
       <app-review [review]="data.review" />
 
       <!-- Favorite Icon -->
-      <div class="bg_secondary col_white rounded">
+      <div class="bg_secondary col_white rounded fav">
         <mat-icon
           aria-label="Favorite"
           aria-hidden="false"
@@ -168,14 +168,21 @@
       class="button"
       mat-flat-button
       color="primary"
-      id="next-button-flash"
-      aria-label="go to shop"
       (click)="this.addCard()"
-      disabled="{{
-        this.quantity > 0 && this.quantity <= 100 && !!this.currentlySize
-      }}"
+      [ngClass]="{
+        disabled: this.quantity <= 0 || this.currentlySize === undefined
+      }"
+      [disabled]="this.quantity <= 0 || this.currentlySize === undefined"
     >
-      View All
+      <mat-icon
+        color="{{
+          this.quantity <= 0 || this.currentlySize === undefined
+            ? 'tertiary'
+            : 'primary'
+        }}"
+        >shopping_cart</mat-icon
+      >
+      Add to cart
     </button>
   </div>
 </section>

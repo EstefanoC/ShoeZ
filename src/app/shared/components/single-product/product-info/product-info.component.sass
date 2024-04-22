@@ -24,6 +24,8 @@
       align-items: center
       justify-content: space-between
       width: 100%
+      .fav
+        cursor: pointer
       .discount
         display: flex
         align-items: center
@@ -43,6 +45,14 @@
           width: 32px !important
           height: 32px !important
           font-size: 32px !important
+    .button
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      gap: 1rem
+      cursor: pointer
+      &.disabled
+        cursor: not-allowed
     .input_quantity
       width: 110px
       input

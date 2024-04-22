@@ -43,7 +43,40 @@ export class ProductInfoComponent {
   handleChangeQuantity(event: Event) {
     const input = event.target as HTMLInputElement;
 
-    this.quantity = Number(input.value);
+    console.log(
+      Number(input.value),
+      isNaN(Number(input.value)),
+      Number(input.value) < 0
+    );
+
+    if (Number(input.value) < 0 || isNaN(Number(input.value))) {
+      this.quantity = 1;
+      input.value = '1';
+    } else if (Number(input.value) > 100) {
+      this.quantity = 100;
+      input.value = '100';
+    } else {
+      this.quantity = Number(input.value);
+    }
+  }
+
+  validateCart(): boolean {
+    console.log(
+      this.quantity <= 0,
+      this.quantity <= 0 ||
+        this.quantity > 100 ||
+        typeof this.currentlySize === 'undefined'
+    );
+
+    if (
+      this.quantity <= 0 ||
+      this.quantity > 100 ||
+      typeof this.currentlySize === 'undefined'
+    ) {
+      return true;
+    }
+
+    return false;
   }
 
   addCard() {

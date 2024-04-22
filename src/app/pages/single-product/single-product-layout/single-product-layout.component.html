@@ -2,23 +2,22 @@
   <!-- breadcrumb -->
   <app-breadcrumbs [currentRoute]="data.title" />
 
-  <section class="top_row">
+  <div class="top_col">
     <!-- Title -->
     <h1 class="top_title text_xl">{{ data.title }}</h1>
 
     <!-- List to show -->
-    <mat-grid-list cols="2" rowHeight="2:2">
+    <div class="list_info">
       <!-- Print images -->
-      <mat-grid-tile>
-        <app-image360 [imageData]="data.images" style="margin-right: auto" />
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-product-info [data]="data" style="height: 100%" />
-      </mat-grid-tile>
-      <mat-grid-tile>3</mat-grid-tile>
-      <mat-grid-tile>4</mat-grid-tile>
-    </mat-grid-list>
-  </section>
+      <app-image360 [imageData]="data.images" style="margin-right: auto" />
+
+      <!-- Product info -->
+      <app-product-info [data]="data" style="height: 100%" />
+    </div>
+
+    <!-- List to show -->
+    <div class="description_tab">tab</div>
+  </div>
 
   <p>single-product-layout works! {{ product }}</p>
 </div>
