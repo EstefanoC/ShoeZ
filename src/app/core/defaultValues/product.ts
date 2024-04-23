@@ -11,9 +11,10 @@ export const ProductDefault: Product = {
   title: 'Jordan 11 Retro Low IE White Gym Red',
   description_short:
     'Originally designed as a Michael Jordan player-exclusive sneaker for the 1996 season, the Jordan 11 Retro Low IE White Gym Red is an International Exclusive re-release of the offering.',
-  description: `This low-cut sneaker sports a white leather upper highlighted by Gym Red overlays. White mesh windows appear on the elephant print Gym Red overlays. Black hues on the tongue, Jumpman tongue branding, and sockliner provide a contrasting tone to the upper. Other details include parallel stitching on the leather upper, round laces, and a white tongue. A white midsole and a red translucent outsole with black herringbone-patterned traction inserts complete the design.
-
-    What our experts love about this sneaker is its design and colorway. The white leather upper with Gym Red overlays and elephant print details on the wrap-around overlay makes this sneaker stand out. The Jordan 11 Retro Low IE White Gym Red was made available on September 23rd, 2017.`,
+  description: [
+    'This low-cut sneaker sports a white leather upper highlighted by Gym Red overlays. White mesh windows appear on the elephant print Gym Red overlays. Black hues on the tongue, Jumpman tongue branding, and sockliner provide a contrasting tone to the upper. Other details include parallel stitching on the leather upper, round laces, and a white tongue. A white midsole and a red translucent outsole with black herringbone-patterned traction inserts complete the design.',
+    'What our experts love about this sneaker is its design and colorway. The white leather upper with Gym Red overlays and elephant print details on the wrap-around overlay makes this sneaker stand out. The Jordan 11 Retro Low IE White Gym Red was made available on September 23rd, 2017.',
+  ],
   images: {
     number: 1,
     path: 'https://images.stockx.com/360/Air-Jordan-11-Retro-Low-IE-White-Gym-Red/Images/Air-Jordan-11-Retro-Low-IE-White-Gym-Red/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1635281283&h=384&q=57',
@@ -41,7 +42,10 @@ export const ProductDefault: Product = {
     '44.5',
     '45',
   ],
-  tag: [{ id: 1, name: 'jordan' }],
+  tag: [
+    { id: 1, name: 'jordan' },
+    { id: 2, name: 'nike' },
+  ],
   color: ['white', 'red'],
   releaseDate: new Date(),
   condition: 'new',

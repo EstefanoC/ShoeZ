@@ -1,0 +1,241 @@
+<section class="tab">
+  <mat-tab-group>
+    <!-- Description Tab -->
+    <mat-tab label="Description">
+      <div class="item description">
+        <!-- Details -->
+        <ul class="details">
+          <!-- Color -->
+          <li>
+            <span class="text_base col_background">Color</span>
+            <p class="text_lg col_background">{{ data.color.join(", ") }}</p>
+          </li>
+          <mat-divider color="primary"></mat-divider>
+
+          <!-- Release -->
+          <li>
+            <span class="text_base col_background">Release Date</span>
+            <p class="text_lg col_background">
+              {{ data.releaseDate.toISOString().slice(0, 10) }}
+            </p>
+          </li>
+          <mat-divider color="primary"></mat-divider>
+
+          <!-- Condition -->
+          <li>
+            <span class="text_base col_background">Condition</span>
+            <p class="text_lg col_background">{{ data.condition }}</p>
+          </li>
+          <mat-divider color="primary"></mat-divider>
+
+          <!-- Tags -->
+          <li>
+            <span class="text_base col_background">Tags</span>
+            <p class="text_lg col_background">
+              @for (tag of data.tag; track data.tag; let i = $index) {
+              <span *ngIf="i > 0">, </span>{{ tag.name }}
+              }
+            </p>
+          </li>
+          <mat-divider color="primary"></mat-divider>
+        </ul>
+
+        <!-- Print Description -->
+        @for (des of data.description; track data.description) {
+        <p class="text_base col_background">{{ des }}</p>
+        }
+
+        <!-- Icon List -->
+        <div class="icon_list">
+          <mat-icon class="col_background"> local_laundry_service </mat-icon>
+          <mat-icon class="col_background"> dry </mat-icon>
+          <mat-icon class="col_background"> water_voc </mat-icon>
+        </div>
+
+        <!-- Text List -->
+        <ul class="text_list">
+          <li>
+            <p class="text_small col_background">
+              MACHINE WASH AT MAX.TEMP. 30° C - NORMAL PROCESS
+            </p>
+          </li>
+          <li><p class="text_small col_background">DO NOT BLEACH</p></li>
+          <li><p class="text_small col_background">NOT TUMBLE DRY</p></li>
+          <li>
+            <p class="text_small col_background">
+              IRON AT MAX. TEMP. OF 110° C WITHOUT STEAM
+            </p>
+          </li>
+          <li><p class="text_small col_background">DO NOT DRY CLEAN</p></li>
+        </ul>
+      </div>
+    </mat-tab>
+
+    <!-- Delivery policy tab -->
+    <mat-tab label="Delivery Policy">
+      <div class="item delivery">
+        <ul>
+          <li>
+            <p class="text_lg col_background">Methods of Delivery:</p>
+            <ul>
+              <li>
+                <p class="text_small col_background">
+                  Standard Delivery: Regular shipping with an estimated delivery
+                  time.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  Express Delivery: Faster shipping for urgent orders.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  Next Day Delivery: Guaranteed delivery within one business
+                  day.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  International Delivery: Shipping to destinations outside your
+                  country.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p class="text_lg col_background">Places of Delivery:</p>
+            <ul>
+              <li>
+                <p class="text_small col_background">
+                  Clearly state the locations where you offer delivery services
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  Be realistic about the areas you can cover.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  For instance, if you don’t deliver to remote or challenging
+                  locations, be upfront about it
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  making promises that local postal services cannot fulfill
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p class="text_lg col_background">Delivery Charges:</p>
+            <ul>
+              <li>
+                <p class="text_small col_background">
+                  If it’s straightforward, provide a detailed breakdown
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  If your shop is VAT registered, mention whether VAT applies to
+                  delivery charges
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  Next Day Delivery: Guaranteed delivery within one business
+                  day.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  Be honest and realistic about delivery times to manage
+                  customer expectations
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  Consider using automated email notifications or SMS alerts
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </mat-tab>
+
+    <!-- Shipping and return -->
+    <mat-tab label="Shipping and return">
+      <div class="item shipping">
+        <ul>
+          <li>
+            <p class="text_lg col_background">Cost of shipping:</p>
+            <ul>
+              <li>
+                <p class="text_small col_background">
+                  We offer free shipping for orders over $50.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  For orders under $50, shipping is $5.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  We process orders within 1-2 business days from the date of
+                  purchase.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  We offer standard and express shipping.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  Express shipping arrives in 1-2 business days.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  We will provide a tracking number once the order is shipped.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p class="text_lg col_background">Return Policy:</p>
+            <ul>
+              <li>
+                <p class="text_small col_background">
+                  We accept returns within 30 days of delivery.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  Products must be in their original condition, unused and with
+                  labels intact.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  Customers must contact our customer service to initiate a
+                  return. We will provide a prepaid return shipping label.
+                </p>
+              </li>
+              <li>
+                <p class="text_small col_background">
+                  We will issue a refund within 5 business days of receiving the
+                  returned item.
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</section>

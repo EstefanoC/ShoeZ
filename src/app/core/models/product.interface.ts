@@ -5,7 +5,7 @@ import { TagInterface } from './tag.interface';
 export interface Product {
   id: string;
   title: string;
-  description: string;
+  description: string[];
   description_short: string;
   price: number;
   size: ProductSizeType[];
