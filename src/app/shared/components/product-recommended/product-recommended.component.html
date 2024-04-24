@@ -1,0 +1,51 @@
+<section class="recommended">
+  <div class="top">
+    <h2 class="text_xl col_background">Recommended</h2>
+
+    <!-- Arrows to slide -->
+    <div class="arrows">
+      <button
+        mat-mini-fab
+        color="warn"
+        aria-label="prev"
+        id="prev-button-flash"
+        (click)="carousel.prevSlide()"
+      >
+        <mat-icon
+          aria-label="prev"
+          color="tertiary"
+          aria-hidden="false"
+          class="icon"
+          id="prev-button-flash"
+        >
+          west
+        </mat-icon>
+      </button>
+      <button
+        mat-mini-fab
+        color="warn"
+        aria-label="next"
+        id="next-button-flash"
+        (click)="carousel.nextSlide()"
+      >
+        <mat-icon
+          aria-label="next"
+          color="tertiary"
+          aria-hidden="false"
+          class="icon"
+        >
+          east
+        </mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Print carousel -->
+  <div>
+    <app-banner-button
+      [slides]="slides"
+      [slideConfig]="slideConfig"
+      #carousel
+    />
+  </div>
+</section>
