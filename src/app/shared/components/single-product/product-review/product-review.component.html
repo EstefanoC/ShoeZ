@@ -1,0 +1,58 @@
+<section class="bg_tertiary">
+  <div class="container">
+    <div class="grid">
+      <!-- Left Sidebar -->
+      <div class="left_sidebar">
+        <h2 class="text_xl col_background">CUSTOMER REVIEWS</h2>
+
+        <!-- Print review short -->
+        <app-review [review]="data.review" />
+
+        <p class="text_base col_background">Based on 5 reviews</p>
+
+        <!-- Print review long -->
+        <app-long-review [data]="data" />
+
+        <!-- Button to write Review -->
+        <button mat-flat-button color="primary">Send a Review</button>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="right_sidebar">
+        <!-- Sort By -->
+        <div class="item">
+          <mat-form-field>
+            <mat-label>Sort By</mat-label>
+            <mat-select>
+              @for (sort of sort; track sort) {
+              <mat-option [value]="sort.value">{{ sort.label }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- Print Comments -->
+        @for (comment of comments; track comments) {
+        <article class="comment">
+          <div class="content">
+            <div class="left">
+              <h2 class="text_base col_background">{{ comment.user }}</h2>
+              <div class="stars">
+                <app-review [review]="comment.review" />
+              </div>
+              <p class="text_small col_warn">
+                {{ comment.date.toISOString().slice(0, 10) }}
+              </p>
+            </div>
+            <div class="right">
+              <h2 class="text_lg col_background">{{ comment.title }}</h2>
+              <p class="text_base col_background">{{ comment.comment }}</p>
+            </div>
+          </div>
+          <mat-divider color="primary"></mat-divider>
+        </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>
