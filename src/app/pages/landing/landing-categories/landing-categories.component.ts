@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, ViewChild } from '@angular/core';
 import {
   animate,
@@ -77,6 +78,8 @@ import {
 })
 export class LandingCategoriesComponent {
   @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
+
+  constructor(public router: Router) {}
 
   categorySelected: ProductCategories = 'men';
   categories: ProductCategories[] = ProductCategoriesDefault;

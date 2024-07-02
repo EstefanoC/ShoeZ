@@ -150,6 +150,12 @@ $dark-theme: mat.define-dark-theme(
 .col_background {
   color: mat.get-color-from-palette($background);
 }
+.border_primary {
+  border-color: mat.get-color-from-palette($primary);
+}
+.border_warn {
+  border-color: mat.get-color-from-palette($warn);
+}
 .mat-divider.primary {
   border-top-color: mat.get-color-from-palette($primary);
 }
@@ -259,6 +265,12 @@ body.dark-theme {
   .col_background {
     color: mat.get-color-from-palette($dark-background);
   }
+  .border_primary {
+    border-color: mat.get-color-from-palette($dark-primary);
+  }
+  .border_warn {
+    border-color: mat.get-color-from-palette($dark-warn);
+  }
   .mat-divider.primary {
     border-top-color: mat.get-color-from-palette($dark-primary);
   }
@@ -290,8 +302,13 @@ body {
   height: 100%;
   margin: 0;
 }
+
 body {
   overflow-x: hidden;
+}
+
+body.fav_open {
+  overflow-y: hidden;
 }
 
 // Import Presets

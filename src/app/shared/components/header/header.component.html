@@ -38,9 +38,9 @@
             {{ getTheme() ? "dark_mode" : "light_mode" }}
           </mat-icon>
         </li>
-        <li class="bg_secondary col_white rounded">
+        <li class="bg_secondary col_white rounded" (click)="toggleFav()">
           <mat-icon
-            aria-label="Favorite"
+            aria-label="wishlist"
             aria-hidden="false"
             matBadge="1"
             matBadgeColor="primary"
@@ -119,7 +119,7 @@
             {{ getTheme() ? "dark_mode" : "light_mode" }}
           </mat-icon>
         </li>
-        <li class="bg_secondary col_white rounded">
+        <li class="bg_secondary col_white rounded" (click)="toggleFav()">
           <mat-icon
             aria-label="Favorite"
             aria-hidden="false"
@@ -143,3 +143,23 @@
     </div>
   </div>
 </header>
+
+<!-- wishlist popup -->
+<div class="wishlist bg_tertiary" [ngClass]="fav ? 'show' : 'hidden'">
+  <h3 class="col_primary text_xl">wishlist</h3>
+
+  <!-- Print list -->
+  <div class="list">
+    <app-product-card-min [data]="this.data" />
+  </div>
+
+  <!-- Decoration -->
+  <div class="decoration bg_primary"></div>
+</div>
+
+<!-- Backdrop -->
+<div
+  class="backdrop"
+  [ngClass]="fav ? 'open' : 'close'"
+  (click)="toggleFav()"
+></div>

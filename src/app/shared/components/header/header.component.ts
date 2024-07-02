@@ -19,6 +19,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 // Components
 import { SearchComponent } from '../search/search.component';
+import { ProductCardMinComponent } from '../product-card-min/product-card-min.component';
 
 @Component({
   selector: 'app-header',
@@ -54,12 +55,22 @@ import { SearchComponent } from '../search/search.component';
     MatDividerModule,
     MatCheckboxModule,
     MatGridListModule,
+    ProductCardMinComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.sass',
 })
 export class HeaderComponent {
   search = '';
+  fav = false;
+  data = {
+    id: 'wish1',
+    img: '../../../../assets/image/products/Jordan 11 Retro Low IE White Gym Red.avif',
+    title: 'Jordan 11 Retro Low IE White Gym Red',
+    price: 170,
+    review: 4,
+    discount: 5,
+  };
   @Input() headerShow = false;
 
   // Get theme Dark or Light
@@ -86,6 +97,18 @@ export class HeaderComponent {
     } else {
       document.body.classList.remove('light-theme');
       document.body.classList.add('dark-theme');
+    }
+  }
+
+  // Change the wishlist popup
+  toggleFav() {
+    // add light-theme or dark-theme class to body
+    if (document.body.classList.contains('fav_open')) {
+      this.fav = false;
+      document.body.classList.remove('fav_open');
+    } else {
+      this.fav = true;
+      document.body.classList.add('fav_open');
     }
   }
 }

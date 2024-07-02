@@ -79,8 +79,7 @@
         color="primary"
         id="next-button-flash"
         aria-label="go to shop"
-        (click)="carousel.nextSlide()"
-        disabled="{{ this.currentSlide === this.slideShow }}"
+        (click)="this.router.navigate(['/store'])"
       >
         View All
       </button>
