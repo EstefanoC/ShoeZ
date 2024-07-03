@@ -10,7 +10,14 @@
           <h2 class="text_xl col_tertiary">New Arrivals</h2>
           <h1 class="text_h1 col_tertiary">{{ title }}</h1>
           <h2 class="text_xl col_tertiary">Best Shoes</h2>
-          <button mat-raised-button color="primary" class="button">Shop</button>
+          <button
+            mat-raised-button
+            color="primary"
+            class="button"
+            (click)="handleClick()"
+          >
+            Shop
+          </button>
         </div>
       </mat-grid-tile>
 

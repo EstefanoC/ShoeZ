@@ -307,7 +307,8 @@ body {
   overflow-x: hidden;
 }
 
-body.fav_open {
+body.fav_open,
+body.cart_open {
   overflow-y: hidden;
 }
 

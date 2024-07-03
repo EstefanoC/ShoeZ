@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, ViewChild } from '@angular/core';
 import {
   animate,
@@ -46,6 +47,8 @@ export class LandingBannerComponent {
   animationShow = false;
   @ViewChild(BannerComponent, { static: true }) banner!: any;
 
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
     this.title = this.banner.slidePos;
   }
@@ -64,5 +67,10 @@ export class LandingBannerComponent {
     setTimeout(() => {
       return (this.title = shoe);
     }, 500);
+  }
+
+  // Handle Click button
+  handleClick() {
+    this.router.navigate(['/shop']);
   }
 }

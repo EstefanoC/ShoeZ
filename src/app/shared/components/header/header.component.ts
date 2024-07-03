@@ -63,6 +63,7 @@ import { ProductCardMinComponent } from '../product-card-min/product-card-min.co
 export class HeaderComponent {
   search = '';
   fav = false;
+  cart = false;
   data = {
     id: 'wish1',
     img: '../../../../assets/image/products/Jordan 11 Retro Low IE White Gym Red.avif',
@@ -110,13 +111,45 @@ export class HeaderComponent {
 
   // Change the wishlist popup
   toggleFav() {
-    // add light-theme or dark-theme class to body
+    // check if Fav Popup is open or close
     if (document.body.classList.contains('fav_open')) {
       this.fav = false;
       document.body.classList.remove('fav_open');
+
+      if (document.body.classList.contains('cart_open')) {
+        this.cart = false;
+        document.body.classList.remove('cart_open');
+      }
     } else {
       this.fav = true;
       document.body.classList.add('fav_open');
+
+      if (document.body.classList.contains('cart_open')) {
+        this.cart = false;
+        document.body.classList.remove('cart_open');
+      }
+    }
+  }
+
+  // Change the Cart popup
+  toggleCart() {
+    // check if Cart Popup is open or close
+    if (document.body.classList.contains('cart_open')) {
+      this.cart = false;
+      document.body.classList.remove('cart_open');
+
+      if (document.body.classList.contains('fav_open')) {
+        this.fav = false;
+        document.body.classList.remove('fav_open');
+      }
+    } else {
+      this.cart = true;
+      document.body.classList.add('cart_open');
+
+      if (document.body.classList.contains('fav_open')) {
+        this.fav = false;
+        document.body.classList.remove('fav_open');
+      }
     }
   }
 }

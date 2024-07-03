@@ -29,6 +29,6 @@ export class CardComponent {
   }
 
   handleClick(id: string) {
-    this.router.navigate(['/product', id]);
+    this.router.navigate(['/shop', id]);
   }
 }

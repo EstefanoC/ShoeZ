@@ -8,7 +8,7 @@ export const routes: Routes = [
       import('./pages/landing/landing.routes').then((m) => m.AUTH_ROUTES),
   },
   {
-    path: 'product',
+    path: 'shop',
     loadChildren: () =>
       import('./pages/single-product/single-product.routes').then(
         (m) => m.AUTH_ROUTES

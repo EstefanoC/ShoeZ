@@ -48,7 +48,7 @@
             favorite
           </mat-icon>
         </li>
-        <li class="bg_secondary col_white rounded">
+        <li class="bg_secondary col_white rounded" (click)="toggleCart()">
           <mat-icon
             aria-label="Cart"
             aria-hidden="false"
@@ -129,7 +129,7 @@
             favorite
           </mat-icon>
         </li>
-        <li class="bg_secondary col_white rounded">
+        <li class="bg_secondary col_white rounded" (click)="toggleCart()">
           <mat-icon
             aria-label="Cart"
             aria-hidden="false"
@@ -143,6 +143,19 @@
     </div>
   </div>
 </header>
+
+<!-- Cart popup -->
+<div class="cart bg_tertiary" [ngClass]="cart ? 'show' : 'hidden'">
+  <h3 class="col_primary text_xl">Cart</h3>
+
+  <!-- Print list -->
+  <div class="list">
+    <app-product-card-min [data]="this.data" (click)="toggleCart()" />
+  </div>
+
+  <!-- Decoration -->
+  <div class="decoration bg_primary"></div>
+</div>
 
 <!-- wishlist popup -->
 <div class="wishlist bg_tertiary" [ngClass]="fav ? 'show' : 'hidden'">
@@ -172,4 +185,11 @@
   class="backdrop"
   [ngClass]="fav ? 'open' : 'close'"
   (click)="toggleFav()"
+></div>
+
+<!-- Backdrop -->
+<div
+  class="backdrop"
+  [ngClass]="cart ? 'open' : 'close'"
+  (click)="toggleCart()"
 ></div>
