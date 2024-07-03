@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import {
   animate,
   state,
@@ -12,7 +13,6 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule, RouterOutlet } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -73,6 +73,8 @@ export class HeaderComponent {
   };
   @Input() headerShow = false;
 
+  constructor(private router: Router) {}
+
   // Get theme Dark or Light
   getTheme() {
     if (typeof document !== 'undefined') {
@@ -98,6 +100,12 @@ export class HeaderComponent {
       document.body.classList.remove('light-theme');
       document.body.classList.add('dark-theme');
     }
+  }
+
+  // Handle Button of Widhlist to view Shop
+  toggleButton() {
+    this.toggleFav();
+    this.router.navigate(['/shop']);
   }
 
   // Change the wishlist popup
