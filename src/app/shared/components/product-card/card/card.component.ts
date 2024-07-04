@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
 // Core
-import { ProductCard } from '../../../../core/models/product.interface';
-import { ProductCardDefault } from '../../../../core/defaultValues/product';
+import { Product } from '../../../../core/models/product.interface';
+import { ProductDefault } from '../../../../core/defaultValues/product';
 
 // Component
 import { PriceComponent } from '../price/price.component';
@@ -20,7 +20,7 @@ import { ReviewComponent } from '../review/review.component';
   styleUrl: './card.component.sass',
 })
 export class CardComponent {
-  @Input() data: ProductCard = ProductCardDefault;
+  @Input() data: Product = ProductDefault;
 
   constructor(private router: Router) {}
 

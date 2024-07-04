@@ -16,6 +16,7 @@ export interface Product {
   condition: ProductConditionType;
   discount?: number;
   images: {
+    local: string;
     path: string;
     number: number;
   };

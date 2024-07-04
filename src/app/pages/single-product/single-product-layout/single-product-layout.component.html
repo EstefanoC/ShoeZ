@@ -1,4 +1,4 @@
-<div class="container single_product">
+<div class="container single_product" #container>
   <!-- breadcrumb -->
   <app-breadcrumbs [currentRoute]="data.title" />
 
@@ -9,10 +9,13 @@
     <!-- List to show -->
     <div class="list_info">
       <!-- Print images -->
-      <app-image360 [imageData]="data.images" style="margin-right: auto" />
+      <app-image360
+        [imageData]="data.images"
+        style="margin-right: auto; width: 100%"
+      />
 
       <!-- Product info -->
-      <app-product-info [data]="data" style="height: 100%" />
+      <app-product-info [data]="data" style="height: 100%; width: 100%" />
     </div>
 
     <!-- List to show -->

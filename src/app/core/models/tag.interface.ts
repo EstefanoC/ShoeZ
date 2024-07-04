@@ -3,4 +3,4 @@ export interface TagInterface {
   name: TagType;
 }
 
-export type TagType = 'jordan' | 'nike' | 'retro';
+export type TagType = 'jordan' | 'nike' | 'retro' | 'puma' | 'new balance';

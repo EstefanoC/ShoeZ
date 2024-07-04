@@ -9,9 +9,11 @@ import { BannerSingleComponent } from '../../../shared/components/landing/banner
 
 // ts
 import {
+  Product,
   ProductCard,
   ProductsAds,
 } from '../../../core/models/product.interface';
+import { AllProducts } from '../../../core/defaultValues/product';
 
 @Component({
   selector: 'app-landing-trending',
@@ -21,30 +23,7 @@ import {
   styleUrl: './landing-trending.component.sass',
 })
 export class LandingTrendingComponent {
-  slides: ProductCard[] = [
-    {
-      id: 'jordanretro11111orange',
-      img: '../../../../assets/image/products/Jordan 1 Retro High Rare Air Max Orange (GS).avif',
-      title: 'Jordan 1 Retro High Rare Air Max Orange (GS)',
-      price: 50,
-      review: 3.5,
-    },
-    {
-      id: 'jordanretro11111navy',
-      img: '../../../../assets/image/products/Nike Air Max 90 Michigan Navy.avif',
-      title: 'Nike Air Max 90 Michigan Navy',
-      price: 299,
-      discount: 5,
-      review: 2.5,
-    },
-    {
-      id: 'jordanretro11111force1low',
-      img: "../../../../assets/image/products/Nike Air Force 1 Low Shadow White Glacier Blue Ghost (Women's).avif",
-      title: "Nike Air Force 1 Low Shadow White Glacier Blue Ghost (Women's)",
-      price: 364,
-      review: 5,
-    },
-  ];
+  slides: Product[] = [AllProducts[9], AllProducts[10], AllProducts[11]];
   slideConfigGlobal = {
     slidesToShow: 1,
     slidesToScroll: 1,

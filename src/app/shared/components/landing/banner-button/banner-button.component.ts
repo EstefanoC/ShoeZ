@@ -13,8 +13,8 @@ import {
 } from 'ngx-slick-carousel';
 
 // Ts
+import { Product } from '../../../../core/models/product.interface';
 import { CardComponent } from '../../product-card/card/card.component';
-import { ProductCard } from '../../../../core/models/product.interface';
 
 @Component({
   selector: 'app-banner-button',
@@ -24,7 +24,7 @@ import { ProductCard } from '../../../../core/models/product.interface';
 })
 export class BannerButtonComponent {
   @Input() slideConfig = {};
-  @Input() slides: ProductCard[] | [] = [];
+  @Input() slides: Product[] | [] = [];
   @Output() changeCarrousel = new EventEmitter<any>();
   @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
 

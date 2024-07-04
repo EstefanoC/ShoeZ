@@ -8,7 +8,7 @@ import {
 
 // Ts
 import { CardComponent } from '../../product-card/card/card.component';
-import { ProductCard } from '../../../../core/models/product.interface';
+import { Product } from '../../../../core/models/product.interface';
 
 @Component({
   selector: 'app-banner-single',
@@ -20,10 +20,10 @@ import { ProductCard } from '../../../../core/models/product.interface';
 export class BannerSingleComponent {
   @Input() slideConfig1 = {};
   @Input() slideConfig2 = {};
-  @Input() slides: ProductCard[] | [] = [];
+  @Input() slides: Product[] | [] = [];
   @ViewChild('slickModal') slickModal!: SlickCarouselComponent;
 
-  changeImageSrc(product: ProductCard): string {
-    return product.img.slice(0, -5) + ' trending.webp';
+  changeImageSrc(product: Product): string {
+    return product.images.local.slice(0, -5) + ' trending.webp';
   }
 }

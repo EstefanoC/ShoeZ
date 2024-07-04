@@ -1,1 +1,8 @@
-export type ColorType = 'red' | 'white' | 'black';
+export type ColorType =
+  | 'red'
+  | 'white'
+  | 'black'
+  | 'blue'
+  | 'grey'
+  | 'green'
+  | 'purple';

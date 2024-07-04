@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 // Dependencies
 import { MatGridListModule } from '@angular/material/grid-list';
 
 // Core
 import { Product } from '../../../core/models/product.interface';
-import { ProductDefault } from '../../../core/defaultValues/product';
+import { AllProducts } from '../../../core/defaultValues/product';
 
 // Components
 import { BrandInfoComponent } from '../../../shared/components/brand-info/brand-info.component';
@@ -36,14 +36,30 @@ import { ProductRecommendedComponent } from '../../../shared/components/product-
 export class SingleProductLayoutComponent {
   product!: string | null;
   data!: Product;
+  router: Router;
 
-  constructor(public route: ActivatedRoute) {}
+  constructor(public route: ActivatedRoute, router: Router) {
+    this.router = router;
+  }
 
   ngOnInit(): void {
     // Get the name of Product
     this.route.params.subscribe((params) => {
       this.product = params['id'];
-      this.data = ProductDefault;
+      const findProduct: Product | undefined = AllProducts.find(
+        (v) => v.title === params['id']
+      );
+
+      if (findProduct === undefined) {
+        this.router.navigate(['/error404']);
+      } else {
+        window.scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
+        this.data = findProduct;
+      }
     });
   }
 }

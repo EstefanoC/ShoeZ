@@ -1,11 +1,11 @@
 <div class="card">
   <!-- Print Image -->
   <div class="image">
-    <img src="{{ data.img }}" alt="{{ data.title }}" />
+    <img src="{{ data.images.local }}" alt="{{ data.title }}" />
   </div>
   <div class="content">
     <!-- Print Title -->
-    <h2 class="text_base col_background" (click)="handleClick(data.id)">
+    <h2 class="text_base col_background" (click)="handleClick(data.title)">
       {{ data.title }}
     </h2>
 
