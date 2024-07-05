@@ -22,17 +22,23 @@ export class ProductRecommendedComponent {
   @Input() data!: Product;
 
   // Get shoe more than 4 of review
-  slides: Product[] = AllProducts.filter((v) => {
-    if (v.review >= 4) {
-      return -1;
-    }
+  slides: Product[] = AllProducts.reverse().slice(0, 9);
 
-    return 0;
-  }).slice(0, 9);
+  // Check the Tag for recommended
+  ngOnInit() {
+    this.slides = AllProducts.filter((v) => {
+      for (let i = 0; i < v.tag.length; i++) {
+        if (v.tag[i].name === this.data.tag[0].name) {
+          return -1;
+        }
+      }
+      return 0;
+    }).slice(0, 9);
+  }
 
   slideConfig = {
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     infinite: true,
     speed: 800,
   };

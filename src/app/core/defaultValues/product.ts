@@ -1,4 +1,5 @@
 // Ts
+import { Categories } from '../../pages/landing/landing-best-seller/landing-best-seller.component';
 import {
   Product,
   ProductCard,
@@ -839,6 +840,24 @@ export const AllProducts: Product[] = [
     review: 5,
     price: 140,
     discount: 10,
+  },
+];
+
+export const ProductCategoriesBest: Categories[] = [
+  {
+    text: 'Sport',
+    image: '../../assets/image/landing_bestSeller_shoe1.webp',
+    color: '#82e5f0',
+  },
+  {
+    text: 'Sneaker',
+    image: '../../assets/image/landing_bestSeller_shoe2.webp',
+    color: '#9fd7f0',
+  },
+  {
+    text: 'Classic',
+    image: '../../assets/image/landing_bestSeller_shoe3.webp',
+    color: '#ff6b61',
   },
 ];
 
