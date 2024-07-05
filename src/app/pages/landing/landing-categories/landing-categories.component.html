@@ -21,7 +21,7 @@
             cat === categorySelected ? 'active' : ''
           }}"
           [@selected]="cat === categorySelected ? 'selected' : 'hidden'"
-          (click)="this.categorySelected = cat"
+          (click)="toggleCategory(cat)"
         >
           {{ cat }}
         </h2>
@@ -50,7 +50,7 @@
         </mat-icon>
       </button>
       <span class="text_lg col_background">
-        {{ this.currentSlide }} - {{ this.slideShow }}
+        {{ this.currentSlide }} - {{ this.slidePage }}
       </span>
       <button
         mat-mini-fab
@@ -58,7 +58,7 @@
         aria-label="next"
         id="next-button-flash"
         (click)="carousel.nextSlide()"
-        disabled="{{ this.currentSlide === this.slideShow }}"
+        disabled="{{ this.currentSlide === this.slidePage }}"
       >
         <mat-icon
           aria-label="next"

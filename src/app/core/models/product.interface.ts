@@ -15,6 +15,7 @@ export interface Product {
   releaseDate: Date;
   condition: ProductConditionType;
   discount?: number;
+  gender: ProductCategories;
   images: {
     local: string;
     path: string;

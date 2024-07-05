@@ -88,14 +88,37 @@ export class LandingCategoriesComponent {
   categories: ProductCategories[] = ProductCategoriesDefault;
 
   currentSlide: number = 1;
+  slidePage: number = 2;
   slideShow: number = 3;
-  slides: Product[] = AllProducts;
+
+  // Get only the products with Gender
+  slides: Product[] = AllProducts.filter((v) => {
+    if (v.gender === this.categorySelected) {
+      return -1;
+    }
+
+    return 0;
+  }).slice(0, 6);
+
   slideConfig = {
     slidesToShow: this.slideShow,
     slidesToScroll: this.slideShow,
     infinite: false,
     speed: 800,
   };
+
+  toggleCategory(cat: ProductCategories) {
+    this.categorySelected = cat;
+
+    // Get only the products with Gender
+    this.slides = AllProducts.filter((v) => {
+      if (v.gender === cat) {
+        return -1;
+      }
+
+      return 0;
+    }).slice(0, 6);
+  }
 
   changeCarousel(e: any) {
     this.currentSlide = (e.nextSlide + this.slideShow) / this.slideShow;

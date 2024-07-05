@@ -4,9 +4,9 @@
   [config]="slideConfig"
   (beforeChange)="beforeChange($event)"
 >
-  @for (slide of slides; track slide) {
-  <div ngxSlickItem class="slide">
-    <app-card [data]="slide" />
+  <div *ngFor="let slide of slides; trackBy: trackByFn">
+    <div ngxSlickItem class="slide">
+      <app-card [data]="slide" />
+    </div>
   </div>
-  }
 </ngx-slick-carousel>
