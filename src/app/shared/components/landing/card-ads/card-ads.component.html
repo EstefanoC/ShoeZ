@@ -16,7 +16,12 @@
   <div class="content_price">
     <app-price [price]="data.price" [discount]="data.discount" />
 
-    <button mat-mini-fab color="primary" aria-label="Button to shop">
+    <button
+      mat-mini-fab
+      color="primary"
+      aria-label="Button to shop"
+      (click)="handleClick(data.title)"
+    >
       <mat-icon
         aria-label="east"
         color="tertiary"

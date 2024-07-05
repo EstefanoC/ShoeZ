@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input } from '@angular/core';
 
 // Dependencies
@@ -21,7 +22,14 @@ import { PriceComponent } from '../../product-card/price/price.component';
 export class CardAdsComponent {
   @Input() data: ProductsAds = ProductAdsDefault;
 
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
     this.data = { ...this.data };
+  }
+
+  // Handle Click button
+  handleClick(id: string) {
+    this.router.navigate(['/shop', id]);
   }
 }

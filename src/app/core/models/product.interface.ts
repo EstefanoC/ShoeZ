@@ -25,13 +25,18 @@ export interface Product {
 export interface ProductCard {
   id: string;
   img: string;
-  title: string;
   price: number;
+  title: string;
   review: number;
   discount?: number;
 }
 
-export interface ProductsAds extends ProductCard {
+export interface ProductsAds {
+  id: string;
+  img: string;
+  price: number;
+  title: string;
+  discount?: number;
   cols: number;
   rows: number;
   image: boolean;
