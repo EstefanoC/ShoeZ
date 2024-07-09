@@ -1,0 +1,160 @@
+<div class="content">
+  <!-- Price -->
+  <div class="price">
+    <h3 class="text_lg">Price</h3>
+
+    <mat-slider
+      min="{{ this.minPrice }}"
+      max="{{ this.maxPrice }}"
+      style="width: 100%"
+      (change)="handleSlider($event)"
+      [discrete]="true"
+    >
+      <input value="{{ this.minPrice }}" matSliderStartThumb />
+      <input value="{{ this.maxPrice }}" matSliderEndThumb />
+    </mat-slider>
+  </div>
+
+  <mat-divider color="warn"></mat-divider>
+
+  <mat-accordion>
+    <!-- Tags -->
+    <mat-expansion-panel
+      hideToggle
+      style="border: none; box-shadow: none; background: transparent"
+    >
+      <mat-expansion-panel-header
+        style="background: transparent; user-select: none"
+      >
+        <mat-panel-title class="text_lg"> Tags </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="list-checkbox">
+        @for (tags of tag; track tag) {
+        <mat-checkbox
+          [checked]="tags.active"
+          (change)="valueChange(tag, tags, 'tag', $event)"
+          color="primary"
+          [labelPosition]="'after'"
+          class="text_base checkbox"
+          style="width: 100%; padding-right: 1rem; user-select: none"
+        >
+          {{ tags.name }}
+        </mat-checkbox>
+        }
+      </div>
+    </mat-expansion-panel>
+
+    <mat-divider color="warn"></mat-divider>
+
+    <!-- Color -->
+    <mat-expansion-panel
+      hideToggle
+      style="border: none; box-shadow: none; background: transparent"
+    >
+      <mat-expansion-panel-header
+        style="background: transparent; user-select: none"
+      >
+        <mat-panel-title class="text_lg"> Colors </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="list-checkbox">
+        @for (colors of color; track color) {
+        <mat-checkbox
+          [checked]="colors.active"
+          (change)="valueChange(color, colors, 'color', $event)"
+          color="primary"
+          [labelPosition]="'after'"
+          class="text_base checkbox"
+          style="width: 100%; padding-right: 1rem; user-select: none"
+        >
+          {{ colors.name }}
+          <span class="rounded" style="background: {{ colors.name }};"></span>
+        </mat-checkbox>
+        }
+      </div>
+    </mat-expansion-panel>
+
+    <mat-divider color="warn"></mat-divider>
+
+    <!-- Gender -->
+    <mat-expansion-panel
+      hideToggle
+      style="border: none; box-shadow: none; background: transparent"
+    >
+      <mat-expansion-panel-header
+        style="background: transparent; user-select: none"
+      >
+        <mat-panel-title class="text_lg"> Gender </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="list-checkbox">
+        @for (genders of gender; track gender) {
+        <mat-checkbox
+          [checked]="genders.active"
+          (change)="valueChange(gender, genders, 'gender', $event)"
+          color="primary"
+          [labelPosition]="'after'"
+          class="text_base checkbox"
+          style="width: 100%; padding-right: 1rem; user-select: none"
+        >
+          {{ genders.name }}
+        </mat-checkbox>
+        }
+      </div>
+    </mat-expansion-panel>
+
+    <mat-divider color="warn"></mat-divider>
+
+    <!-- Condition -->
+    <mat-expansion-panel
+      hideToggle
+      style="border: none; box-shadow: none; background: transparent"
+    >
+      <mat-expansion-panel-header
+        style="background: transparent; user-select: none"
+      >
+        <mat-panel-title class="text_lg"> Condition </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="list-checkbox">
+        @for (conditions of condition; track condition) {
+        <mat-checkbox
+          [checked]="conditions.active"
+          (change)="valueChange(condition, conditions, 'condition', $event)"
+          color="primary"
+          [labelPosition]="'after'"
+          class="text_base checkbox"
+          style="width: 100%; padding-right: 1rem; user-select: none"
+        >
+          {{ conditions.name }}
+        </mat-checkbox>
+        }
+      </div>
+    </mat-expansion-panel>
+
+    <mat-divider color="warn"></mat-divider>
+
+    <!-- Size -->
+    <mat-expansion-panel
+      hideToggle
+      style="border: none; box-shadow: none; background: transparent"
+    >
+      <mat-expansion-panel-header
+        style="background: transparent; user-select: none"
+      >
+        <mat-panel-title class="text_lg"> Size </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="list-checkbox">
+        @for (sizes of size; track size) {
+        <mat-checkbox
+          [checked]="sizes.active"
+          (change)="valueChange(size, sizes, 'size', $event)"
+          color="primary"
+          [labelPosition]="'after'"
+          class="text_base checkbox"
+          style="width: 100%; padding-right: 1rem; user-select: none"
+        >
+          {{ sizes.name }}
+        </mat-checkbox>
+        }
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

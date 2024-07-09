@@ -1,6 +1,6 @@
 // Core
-import { ColorType } from './color.interface';
 import { TagInterface } from './tag.interface';
+import { ColorInterface } from './color.interface';
 
 export interface Product {
   id: string;
@@ -11,7 +11,7 @@ export interface Product {
   size: ProductSizeType[];
   tag: TagInterface[];
   review: number;
-  color: ColorType[];
+  color: ColorInterface[];
   releaseDate: Date;
   condition: ProductConditionType;
   discount?: number;
@@ -41,6 +41,24 @@ export interface ProductsAds {
   cols: number;
   rows: number;
   image: boolean;
+}
+
+export interface GenderInterface {
+  id: number;
+  name: ProductCategories;
+  active?: boolean;
+}
+
+export interface ConditionInterface {
+  id: number;
+  name: ProductConditionType;
+  active?: boolean;
+}
+
+export interface SizeInterface {
+  id: number;
+  name: ProductSizeType;
+  active?: boolean;
 }
 
 export type ProductCategories = 'men' | 'women' | 'unisex';
