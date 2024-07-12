@@ -1,1 +1,9 @@
-<p>shop-grid works!</p>
+<div class="grid">
+  <mat-grid-list cols="3" rowHeight="500px">
+    @for (single of data; track data) {
+    <mat-grid-tile>
+      <app-card ngxSlickItem [data]="single" />
+    </mat-grid-tile>
+    }
+  </mat-grid-list>
+</div>
