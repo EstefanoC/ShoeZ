@@ -69,13 +69,28 @@
             <a [routerLink]="['/shop']" class="col_tertiary">All Shoes</a>
           </li>
           <li>
-            <a [routerLink]="['/shop?men']" class="col_tertiary">Men</a>
+            <a
+              [routerLink]="['/shop']"
+              [queryParams]="{ men: true }"
+              class="col_tertiary"
+              >Men</a
+            >
           </li>
           <li>
-            <a [routerLink]="['/shop?women']" class="col_tertiary">Women</a>
+            <a
+              [routerLink]="['/shop']"
+              [queryParams]="{ women: true }"
+              class="col_tertiary"
+              >Women</a
+            >
           </li>
           <li>
-            <a [routerLink]="['/shop?unisex']" class="col_tertiary">Unisex</a>
+            <a
+              [routerLink]="['/shop']"
+              [queryParams]="{ unisex: true }"
+              class="col_tertiary"
+              >Unisex</a
+            >
           </li>
         </ul>
 
@@ -98,13 +113,28 @@
           <a [routerLink]="['/shop']" class="col_tertiary">All Shoes</a>
         </li>
         <li>
-          <a [routerLink]="['/shop?men']" class="col_tertiary">Men</a>
+          <a
+            [routerLink]="['/shop']"
+            [queryParams]="{ men: true }"
+            class="col_tertiary"
+            >Men</a
+          >
         </li>
         <li>
-          <a [routerLink]="['/shop?women']" class="col_tertiary">Women</a>
+          <a
+            [routerLink]="['/shop']"
+            [queryParams]="{ women: true }"
+            class="col_tertiary"
+            >Women</a
+          >
         </li>
         <li>
-          <a [routerLink]="['/shop?unisex']" class="col_tertiary">Unisex</a>
+          <a
+            [routerLink]="['/shop']"
+            [queryParams]="{ unisex: true }"
+            class="col_tertiary"
+            >Unisex</a
+          >
         </li>
       </ul>
 

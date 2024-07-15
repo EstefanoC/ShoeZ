@@ -21,7 +21,10 @@
 
 <!-- Shop Content -->
 <section class="shop_content container">
-  <app-shop-filter />
+  <app-shop-filter
+    [filter]="this.filter"
+    (filterChange)="changeFilter($event)"
+  />
 
   <app-shop-grid style="flex: 1" />
 </section>
