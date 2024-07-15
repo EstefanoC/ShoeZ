@@ -20,7 +20,7 @@ export class BreadcrumbsComponent {
   ngOnInit() {
     this.routes = this.router.url
       .split('/')
-      .map((e) => (e === '' ? 'home' : e));
+      .map((e) => (e === '' ? 'home' : e.split('?')[0]));
   }
 
   setRouter(item: string): string {

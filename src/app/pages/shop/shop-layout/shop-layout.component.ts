@@ -1,5 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 // Components
 import { ShopGridComponent } from '../../../shared/components/shop/shop-grid/shop-grid.component';
@@ -22,7 +22,6 @@ export class ShopLayoutComponent {
 
   @Output() valueChange: EventEmitter<ShopFilter> =
     new EventEmitter<ShopFilter>();
-  // @Input() filter: ShopFilter = defaultFilter;
 
   constructor(private route: ActivatedRoute) {}
 
