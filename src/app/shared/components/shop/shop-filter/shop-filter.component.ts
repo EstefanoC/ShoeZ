@@ -8,7 +8,6 @@ import {
   Output,
   EventEmitter,
   OnChanges,
-  SimpleChange,
   SimpleChanges,
 } from '@angular/core';
 
@@ -107,11 +106,9 @@ export class ShopFilterComponent implements OnChanges {
       | TagInterface[]
       | ColorInterface[]
       | GenderInterface[]
-      | ConditionInterface[]
-      | SizeInterface[],
+      | ConditionInterface[],
     target:
       | TagInterface
-      | SizeInterface
       | ColorInterface
       | GenderInterface
       | ConditionInterface,
@@ -192,22 +189,6 @@ export class ShopFilterComponent implements OnChanges {
             condition: [
               ...this.filter.condition.filter((v) => v !== target.name),
             ],
-          });
-        }
-
-        // Size Conditional to update
-      } else {
-        this.size[index].active = $event.checked;
-
-        if ($event.checked) {
-          this.filterChange.emit({
-            ...this.filter,
-            size: [...this.filter.size, target.name as SizeInterface['name']],
-          });
-        } else {
-          this.filterChange.emit({
-            ...this.filter,
-            size: [...this.filter.size.filter((v) => v !== target.name)],
           });
         }
       }

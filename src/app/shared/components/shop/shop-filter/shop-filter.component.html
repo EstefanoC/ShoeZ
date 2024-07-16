@@ -130,31 +130,5 @@
     </mat-expansion-panel>
 
     <mat-divider color="warn"></mat-divider>
-
-    <!-- Size -->
-    <mat-expansion-panel
-      hideToggle
-      style="border: none; box-shadow: none; background: transparent"
-    >
-      <mat-expansion-panel-header
-        style="background: transparent; user-select: none"
-      >
-        <mat-panel-title class="text_lg"> Size </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="list-checkbox">
-        @for (sizes of size; track size) {
-        <mat-checkbox
-          [checked]="sizes.active"
-          (change)="valueChange(size, sizes, 'size', $event)"
-          color="primary"
-          [labelPosition]="'after'"
-          class="text_base checkbox"
-          style="width: 100%; padding-right: 1rem; user-select: none"
-        >
-          {{ sizes.name }}
-        </mat-checkbox>
-        }
-      </div>
-    </mat-expansion-panel>
   </mat-accordion>
 </div>
