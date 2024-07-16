@@ -1,4 +1,8 @@
 <div class="grid">
+  @if (this.data.length === 0) {
+  <h3 class="text_xl col_primary">No Products to show</h3>
+  }
+
   <mat-grid-list cols="3" rowHeight="500px">
     @for (single of data; track data) {
     <mat-grid-tile>
