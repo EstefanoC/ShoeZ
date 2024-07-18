@@ -104,6 +104,8 @@ header
   height: auto
   min-height: 231px
   z-index: 1001
+  .logo_mobile
+    display: none
   > .mat-grid-list
     width: 100%
     align-items: center
@@ -175,3 +177,39 @@ header
         padding: 0
         > li
           cursor: pointer
+
+
+@media (max-width: 960px)
+  header > .mat-grid-list,
+  header
+    .navbar_fixed > div > .nav
+      gap: 2rem
+      padding: 0
+    .navbar
+      height: 50px
+      justify-content: center
+      & > ul
+        gap: 2rem
+        padding: 0
+    .search
+      display: none
+
+@media (max-width: 720px)
+  header > .mat-grid-list .hidden_mb
+    display: none
+  header > .logo_mobile
+    position: absolute
+    display: block
+    object-fit: cover
+    max-width: 80px
+    max-height: 80px
+    border-radius: 15px
+    overflow: hidden
+    margin-right: auto
+    > img
+      width: 100%
+      height: 100%
+
+@media (max-width: 540px)
+  header > .mat-grid-list .navbar
+    display: none

@@ -1,7 +1,17 @@
 <header class="container" id="static_header">
+  <a class="logo_mobile" [routerLink]="['/']">
+    <img
+      [attr.src]="
+        getTheme()
+          ? '../../assets/image/LogoDark.png'
+          : '../../assets/image/LogoLight.png'
+      "
+      alt="ShoeZ Logo"
+    />
+  </a>
   <mat-grid-list cols="3" rowHeight="115px">
     <!-- Logo -->
-    <mat-grid-tile>
+    <mat-grid-tile class="hidden_mb">
       <a class="logo" [routerLink]="['/']">
         <img
           [attr.src]="
@@ -15,7 +25,7 @@
     </mat-grid-tile>
 
     <!-- Phone -->
-    <mat-grid-tile>
+    <mat-grid-tile class="hidden_mb">
       <div class="phone mat-typography">
         <div class="bg_secondary rounded">
           <mat-icon class="col_white" aria-label="Phone"
@@ -30,7 +40,7 @@
     </mat-grid-tile>
 
     <!-- Icons -->
-    <mat-grid-tile>
+    <mat-grid-tile class="hidden_mb">
       <ul class="icons">
         <!-- add two buttons to switch theme from light to dark -->
         <li class="bg_secondary col_white rounded" (click)="toggleTheme()">
@@ -95,7 +105,7 @@
         </ul>
 
         <!-- Search -->
-        <app-search />
+        <app-search class="search" />
       </div>
     </mat-grid-tile>
   </mat-grid-list>
@@ -139,7 +149,7 @@
       </ul>
 
       <!-- Search -->
-      <app-search />
+      <app-search class="search" />
 
       <!-- Icons -->
       <ul class="icons">
