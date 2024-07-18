@@ -7,9 +7,18 @@
   />
 
   <!-- Grid Layout -->
-  <mat-grid-list cols="4" rowHeight="425px">
+  <mat-grid-list
+    cols="{{
+      this.breakpoint >= 960 ? '4' : this.breakpoint >= 540 ? '2' : '1'
+    }}"
+    rowHeight="{{ this.breakpoint >= 960 ? '425px' : '500px' }}"
+    (window:resize)="onResize($event)"
+  >
     @for (card of ads; track ads) {
-    <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-tile
+      [colspan]="this.breakpoint >= 540 ? card.cols : 1"
+      [rowspan]="card.rows"
+    >
       <div style="width: 100%; height: 100%">
         <app-card-ads [data]="card" />
       </div>

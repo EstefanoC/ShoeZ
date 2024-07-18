@@ -55,5 +55,22 @@ export class CustomerCarouselComponent {
     arrows: false,
     dots: true,
     autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: '20px',
+        },
+      },
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 }

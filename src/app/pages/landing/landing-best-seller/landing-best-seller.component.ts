@@ -24,6 +24,17 @@ export interface Categories {
 })
 export class LandingBestSellerComponent {
   categories = ProductCategoriesBest;
+  breakpoint = false;
 
   constructor(public router: Router) {}
+
+  // Check the breakpoints
+  ngOnInit(): void {
+    this.breakpoint = window.innerWidth <= 1140;
+  }
+
+  // Resize window
+  onResize(event: any) {
+    this.breakpoint = event.target.innerWidth <= 1140;
+  }
 }

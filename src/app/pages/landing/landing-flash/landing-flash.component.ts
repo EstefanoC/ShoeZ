@@ -50,6 +50,22 @@ export class LandingFlashComponent {
     slidesToScroll: this.slideShow,
     infinite: false,
     speed: 800,
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1140,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   changeCarousel(e: any) {

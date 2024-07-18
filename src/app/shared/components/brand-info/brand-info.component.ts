@@ -15,6 +15,8 @@ import { BrandInfo } from '../../../core/models/brand.interface';
   styleUrl: './brand-info.component.sass',
 })
 export class BrandInfoComponent {
+  breakpoint = false;
+
   data: BrandInfo[] = [
     {
       icon: 'sync_alt',
@@ -32,4 +34,14 @@ export class BrandInfoComponent {
       content: 'Contact us 24 hours a day, 7 days a week',
     },
   ];
+
+  // Check the breakpoints
+  ngOnInit(): void {
+    this.breakpoint = window.innerWidth <= 540;
+  }
+
+  // Resize window
+  onResize(event: any) {
+    this.breakpoint = event.target.innerWidth <= 540;
+  }
 }

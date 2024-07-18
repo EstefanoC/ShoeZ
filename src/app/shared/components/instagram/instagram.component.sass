@@ -54,3 +54,10 @@
         opacity: 1
       > img
         scale: 1.2
+
+@media (max-width: 960px)
+  .instagram_grid
+    margin: -10rem auto
+    & > .list > div > .tile:first-child .instagram_card,
+    & > .list > div > .tile:last-child .instagram_card
+      display: none

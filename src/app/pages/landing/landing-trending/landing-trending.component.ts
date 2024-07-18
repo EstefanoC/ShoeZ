@@ -8,12 +8,8 @@ import { CardAdsComponent } from '../../../shared/components/landing/card-ads/ca
 import { BannerSingleComponent } from '../../../shared/components/landing/banner-single/banner-single.component';
 
 // ts
-import {
-  Product,
-  ProductCard,
-  ProductsAds,
-} from '../../../core/models/product.interface';
 import { AllProducts } from '../../../core/defaultValues/product';
+import { Product, ProductsAds } from '../../../core/models/product.interface';
 
 @Component({
   selector: 'app-landing-trending',
@@ -23,6 +19,7 @@ import { AllProducts } from '../../../core/defaultValues/product';
   styleUrl: './landing-trending.component.sass',
 })
 export class LandingTrendingComponent {
+  breakpoint = 0;
   slides: Product[] = [AllProducts[9], AllProducts[10], AllProducts[12]];
   slideConfigGlobal = {
     slidesToShow: 1,
@@ -111,4 +108,14 @@ export class LandingTrendingComponent {
       image: true,
     },
   ];
+
+  // Check the breakpoints
+  ngOnInit(): void {
+    this.breakpoint = window.innerWidth;
+  }
+
+  // Resize window
+  onResize(event: any) {
+    this.breakpoint = event.target.innerWidth;
+  }
 }

@@ -1,8 +1,15 @@
 <section class="bg_tertiary bg_primary_before">
   <div class="container bg_background_before">
-    <mat-grid-list cols="5" rowHeight="600px">
+    <mat-grid-list
+      cols="5"
+      rowHeight="{{ this.breakpoint ? '400px' : '600px' }}"
+      (window:resize)="onResize($event)"
+    >
       <!-- Left section -->
-      <mat-grid-tile colspan="2" style="overflow: visible">
+      <mat-grid-tile
+        colspan="{{ this.breakpoint ? '5' : '2' }}"
+        style="overflow: visible"
+      >
         <div
           class="message"
           [@showText]="this.animationShow ? 'show' : 'hidden'"
@@ -22,7 +29,10 @@
       </mat-grid-tile>
 
       <!-- Right section -->
-      <mat-grid-tile colspan="3" style="overflow: visible; user-select: none">
+      <mat-grid-tile
+        colspan="{{ this.breakpoint ? '5' : '3' }}"
+        style="overflow: visible; user-select: none"
+      >
         <div class="banner">
           <app-banner (newEmitter)="changeModal($event)" />
         </div>

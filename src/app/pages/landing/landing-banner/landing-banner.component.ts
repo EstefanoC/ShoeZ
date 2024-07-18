@@ -44,6 +44,7 @@ import { BannerComponent } from '../../../shared/components/landing/banner/banne
 })
 export class LandingBannerComponent {
   title = '';
+  breakpoint = false;
   animationShow = false;
   @ViewChild(BannerComponent, { static: true }) banner!: any;
 
@@ -51,6 +52,14 @@ export class LandingBannerComponent {
 
   ngOnInit(): void {
     this.title = this.banner.slidePos;
+
+    // Check the breakpoints
+    this.breakpoint = window.innerWidth <= 720;
+  }
+
+  // Resize window
+  onResize(event: any) {
+    this.breakpoint = event.target.innerWidth <= 720;
   }
 
   // Handle Modal to change title value and add animation

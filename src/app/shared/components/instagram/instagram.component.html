@@ -1,10 +1,18 @@
 <div class="container instagram_grid">
-  <mat-grid-list cols="4" rowHeight="2:2" [gutterSize]="'1rem'">
+  <mat-grid-list
+    class="list"
+    rowHeight="2:2"
+    [gutterSize]="'1rem'"
+    cols="{{
+      this.breakpoint >= 960 ? '4' : this.breakpoint >= 540 ? '2' : '1'
+    }}"
+    (window:resize)="onResize($event)"
+  >
     <!-- Print all Instagram Post -->
     @for (instagram of data; track data; let i = $index) {
     <!-- Print Unique text -->
     @if (i === 1) {
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
+    <mat-grid-tile [colspan]="this.breakpoint >= 540 ? 2 : 1" [rowspan]="1">
       <div class="instagram_card_unique">
         <h2 class="text_xl">
           <img src="../../../../assets/image/instagram.svg" /> Follow us
@@ -25,7 +33,7 @@
     }
 
     <!-- Print Normal Image -->
-    <mat-grid-tile>
+    <mat-grid-tile class="tile">
       <div class="instagram_card">
         <img src="{{ instagram.img }}" alt="ShoeZ Instagram" />
 
